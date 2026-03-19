@@ -7,39 +7,58 @@
     <title>Formulário</title>
 </head>
 <body>
-<fieldset style="color: blue">
-    <p><label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required></p>
+    <fieldset style="color: blue; width: 500px; background-color:rgba(255, 252, 213, 0.651);">
+        <h1>Preencha o Formulário</h1>
+        <form action="">
+        <p><label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required></p>
 
-    <p>Sexo:
+        <p>Sexo:
 
-        <input type="radio" id="masculino" name="genero">
-    <label for="masculino">Masulino</label>
-  
-    <input type="radio" id="feminino" name="genero">
-    <label for="feminino">Feminino</label></p>
-   
-    <p><label for="estado-civil">Estado Civil:</label>
-    <select id="estado-civil" name="estado-civil">
-        <option value="option">Selecione uma opção.</option>
-        <option value="solteiro">Solteiro</option>
-        <option value="casado">Casado</option>
-        <option value="divorciado">Solteiro</option>
-        <option value="viuvo">viuvo</option>
-        <option value="separado">Solteiro</option>
-        <option value="">Casado</option></p>
+        <input type="radio" id="masculino" name="genero" required>
+        <label for="masculino">Masulino</label>
 
-    </select>
+        <input type="radio" id="feminino" name="genero">
+        <label for="feminino">Feminino</label></p>
+
+        <p><label for="estado-civil">Estado Civil:</label>
+            
+        <select id="estado-civil" name="estado-civil">
+            <option value="option" disabled selected>Selecione uma opção.</option>
+            <option value="solteiro">Solteiro</option>
+            <option value="casado">Casado</option>
+            <option value="divorciado">Solteiro</option>
+            <option value="viuvo">viuvo</option>
+            <option value="separado">Solteiro</option>
+            <option value="">Casado</option></p>
+
+        </select>
+
+        <p><label for="email">Email:</label>
+        <input type="email" id="email" name="email" required></p>  
+
+        <p><label for="endereço">Endereço:</label>
+        <input type="text" id="endereço" name="endereço" required></p>
+
+        <p><label for="numero">Número:</label>
+        <input type="number" id="numero" name="numero" min="1" step="1" required></p>
+
+        <p><label for="data-nascimento">Data de Nascimento:</label>
+        <input type="date" name="data-nascimento" id="data-nascimento"></p>
+
+        <p><label for="tel">Telefone:</label>
+        <input type="tel" name="tel" id="tel" required placeholder="(00) 90000-0000" minlength="10" maxlength="15"></p>
+
+        <p><label for="pagina-pessoal">Página Pessoal:</label>
+        <input type="url" name="pagina-pessoal" id="pagina-pessoal"></p>    
+
+        <button type="subimit">Enviar</button>
+        <button type="reset">Limpar Formulário</button>
+
+        </form>
     
-    <p><label for="email">Email:</label>
-    <input type="email" id="email" name="email" required></p>  
-   
-    <p><label for="endereço">Endereço:</label>
-    <input type="text" id="endereço" name="endereço" required></p>
-
-    <p><label for="numero">Número:</label>
-    <input type="number" id="numero" name="numero" min="1" step="1" required></p>
+    </fieldset>
     
     
 </body>
-</html>
+</html>a

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Seminário JS: DOM + Geolocalização</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; background-color: #e8ecef; margin: 0; }
+        .card { background: white; padding: 2rem; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: center; width: 350px; }
+        h1 { color: #222; font-size: 1.5rem; }
+        #valor { font-size: 4rem; font-weight: bold; color: #f7df1e; margin: 10px 0; text-shadow: 2px 2px 0px #333; }
+        .controles { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+        button { padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        #btn-soma { background: #28a745; color: white; }
+        #btn-limpar { background: #dc3545; color: white; }
+        button:hover { opacity: 0.8; transform: scale(1.05); }
+        .gps-box { margin-top: 20px; padding-top: 15px; border-top: 1px solid #ddd; font-size: 0.9rem; color: #666; }
+        #status-gps { color: #007bff; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1>Projeto JavaScript</h1>
+        
+        <div id="valor">0</div>
+        <div class="controles">
+            <button id="btn-soma">Adicionar +1</button>
+            <button id="btn-limpar">Limpar</button>
+        </div>
+
+        <div class="gps-box">
+            <p>📍 <strong>Localização:</strong></p>
+            <p id="status-gps">Clique para obter coordenadas</p>
+            <button id="btn-gps" style="background: #333; color: white; width: 100%;">Obter GPS</button>
+        </div>
+    </div>
+
+    <script>
+        // --- LÓGICA DO CONTADOR ---
+        const display = document.querySelector('#valor');
+        const btnSoma = document.querySelector('#btn-soma');
+        const btnLimpar = document.querySelector('#btn-limpar');
+        let contador = 0;
+
+        btnSoma.addEventListener('click', () => {
+            contador++;
+            display.innerText = contador;
+        });
+
+        btnLimpar.addEventListener('click', () => {
+            contador = 0;
+            display.innerText = contador;
+        });
+
+        // --- LÓGICA DA API DE GEOLOCALIZAÇÃO ---
+        const btnGps = document.querySelector('#btn-gps');
+        const statusGps = document.querySelector('#status-gps');
+
+        btnGps.addEventListener('click', () => {
+            if (!navigator.geolocation) {
+                statusGps.innerText = "GPS não suportado pelo navegador.";
+            } else {
+                statusGps.innerText = "Localizando...";
+                
+                // Chamada da API nativa do navegador
+                navigator.geolocation.getCurrentPosition((posicao) => {
+                    const lat = posicao.coords.latitude.toFixed(4);
+                    const lon = posicao.coords.longitude.toFixed(4);
+                    statusGps.innerHTML = `Lat: ${lat} <br> Lon: ${lon}`;
+                }, () => {
+                    statusGps.innerText = "Erro: Permissão negada.";
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    font-family: Oswald;
+}
+ul{
+  
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    background-color: black;
+    justify-content: center;
+}
+
+a:link, a:visited{
+    padding-top: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold; 
+}
+.icone{
+    display: block;
+    padding: 10px 20px;
+    padding-top: 50px;
+    border-bottom: 2px solid black;
+
+    
+}
+.face{
+    background-image: url(../img/faceBlack.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+}
+
+.face:hover{
+    background-image: url(../img/face.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+    color: rgb(97, 121, 255);
+    border-bottom:2px solid rgb(97, 121, 255);
+    
+
+}
+
+.insta{
+    background-image: url(../img/instaBlack.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+}
+.insta:hover{
+    background-image: url(../img/insta.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+    color: rgb(97, 121, 255);
+    border-bottom:2px solid rgb(255, 61, 223);
+    color: rgb(255, 61, 223);
+}
+
+.maps{
+    background-image: url(../img/mapsBlack.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+}
+.maps:hover{
+    background-image: url(../img/maps.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+    border-bottom:2px solid green;
+    color: green; 
+}
+
+.twitter{
+    background-image: url(../img/twitterBlack.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+}
+.twitter:hover{
+    background-image: url(../img/twitter.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+    border-bottom:2px solid yellow;
+    color: yellow;
+}
+
+.youtube{
+    background-image: url(../img/youtubeBlack.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+}
+.youtube:hover{
+    background-image: url(../img/youtube.png);
+    background-repeat: no-repeat;
+    background-position: center 5px;
+    color: rgb(97, 121, 255);
+    border-bottom:2px solid red;
+    color: red;
+}

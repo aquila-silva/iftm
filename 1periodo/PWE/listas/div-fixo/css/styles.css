@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.box a{
+    border: 1px solid rgba (0,0,0,0);
+    padding: 10px;
+    width: 150px;
+    height: 150px;
+    /* background-color: ; */
+    position: fixed;
+    /* top: 0px; */
+    /* left: 0px; */
+    bottom: 0px;
+    right: 0px;
+    background-image: url(../img/Design\ sem\ nome.png);
+    background-size: 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    cursor: pointer;
+    display: block;
+    display: inline-block;
+    
+}

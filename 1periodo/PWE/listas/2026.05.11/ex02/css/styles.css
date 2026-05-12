@@ -1,0 +1,100 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+.navegar{
+    width: 100%;
+    background-color: rgb(101, 136, 242);
+    position: fixed;
+    margin-bottom: 100%;
+    top: 0px;
+    
+}
+ul li{
+    display: block;
+    
+    
+}
+ul li:hover{
+    background-color: rgb(80, 80, 80);
+}
+a:link, a:visited{
+    text-decoration: none;
+    color: white;
+    padding: 30px 20px;
+    display: block;
+    transition: 0.5s;
+}
+a:hover{
+    font-size: 18px;
+    padding: 30px 30px;
+}
+.face:hover{
+    color: rgb(66, 176, 255);
+    background-color: rgb(87, 87, 87)
+}
+.insta:hover{
+    color: rgb(255, 126, 251);
+}
+.maps:hover{
+    color: rgb(53, 255, 53);
+}
+.twitter:hover{
+    color: yellow;
+}
+.youtube:hover{
+    color:red;
+}
+body{
+    background-color: rgb(18, 18, 18);
+}
+.corpo{
+    margin-top: 450px;
+    margin-bottom: 20px;
+}
+.sec1, .sec2{
+    width: 70%;
+    margin: auto;
+    padding: 30px;
+    
+}
+.sec1, .sec1 h1, .sec1 h2{
+    background-color: white;
+    transition: 0.5s;
+}
+.sec2, .sec2 h2{
+    background-color: rgb(187, 173, 255);
+    transition: 0.5s;
+}
+.sec1 h1:hover{
+    color: rgb(255, 11, 11);
+    word-spacing: 10px;
+}
+.sec1 h2:hover{
+    color: rgb(224, 21, 255);
+    padding-left: 20px;
+}
+.sec2 h2:hover{
+    color: rgb(46, 255, 9);
+    padding-left: 20px;
+}
+h1, h2{
+    padding: 10px;
+}
+p{
+    padding: 10px 0px;
+}
+footer{
+    padding: 50px;
+    color: white;
+    text-align: center;
+    background-color: rgb(101, 136, 242);
+}

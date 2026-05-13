@@ -10,6 +10,21 @@ ul{
     justify-content: center;
     
 }
+.zap{
+    width: 150px;
+    height: 150px;
+    background-image: url(../img/zap-image.png);
+    background-repeat: no-repeat;
+    background-size: 120px;
+    background-position: center center;
+    bottom: 20px;
+    right: 20px;
+    position: fixed;
+    transition: 0.5s;
+}
+.zap:hover{
+    background-size: 140px;
+}
 .navegar{
     width: 100%;
     background-color: rgb(101, 136, 242);
@@ -24,7 +39,7 @@ ul li{
     
 }
 ul li:hover{
-    background-color: rgb(80, 80, 80);
+    background-color: rgba(80, 80, 80, 0.8);
 }
 a:link, a:visited{
     text-decoration: none;
@@ -32,14 +47,14 @@ a:link, a:visited{
     padding: 30px 20px;
     display: block;
     transition: 0.5s;
+    font-size: 16px;
 }
 a:hover{
     font-size: 18px;
-    padding: 30px 30px;
+    padding: 24px 30px;
 }
 .face:hover{
     color: rgb(66, 176, 255);
-    background-color: rgb(87, 87, 87)
 }
 .insta:hover{
     color: rgb(255, 126, 251);
@@ -54,11 +69,17 @@ a:hover{
     color:red;
 }
 body{
-    background-color: rgb(18, 18, 18);
+    background-color: black;
+    background-image: url(../img/bk-image.png);
+    background-repeat: no-repeat;
+    background-size: 100% 700px;
+    background-position: top center;
+}
+.fundo{
+    
 }
 .corpo{
     margin-top: 450px;
-    margin-bottom: 20px;
 }
 .sec1, .sec2{
     width: 70%;
@@ -75,8 +96,9 @@ body{
     transition: 0.5s;
 }
 .sec1 h1:hover{
-    color: rgb(255, 11, 11);
+    color: rgb(11, 48, 255);
     word-spacing: 10px;
+    font-size: 35px;
 }
 .sec1 h2:hover{
     color: rgb(224, 21, 255);

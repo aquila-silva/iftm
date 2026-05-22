@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="Guia completo e prático sobre terminal Linux: sistemas de arquivos, operações com pendrives, formatação, partições e comandos essenciais.">
+    <title>🧠 Terminal Linux Guia | Pendrives & Sistemas de Arquivos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f8fafc;
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Noto Sans', sans-serif;
+            line-height: 1.5;
+            color: #0f172a;
+            padding: 1rem;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            padding: 1.5rem 1.2rem 2.5rem;
+        }
+
+        /* cabeçalho */
+        .hero {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #0f2b3d, #1e4a6e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.01em;
+        }
+
+        .hero .badge {
+            background: #1e293b;
+            color: #e2e8f0;
+            display: inline-block;
+            padding: 0.25rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin-top: 0.6rem;
+        }
+
+        /* alerta de segurança */
+        .alert {
+            background: #fffbeb;
+            border-left: 6px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 1rem;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+        }
+
+        .alert strong {
+            color: #b45309;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* blocos de comando */
+        .cmd-block {
+            background: #0f172a;
+            color: #e2e8f0;
+            font-family: 'SF Mono', 'Menlo', 'Cascadia Code', monospace;
+            padding: 0.9rem 1rem;
+            border-radius: 1rem;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+            font-size: 0.85rem;
+            margin: 0.8rem 0;
+            border: 1px solid #334155;
+            box-shadow: inset 0 1px 3px #00000020;
+        }
+
+        .cmd-inline {
+            background: #eef2ff;
+            color: #0c4a6e;
+            font-family: monospace;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.4rem;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.75rem 0;
+            border-left: 4px solid #2c7da0;
+            padding-left: 0.8rem;
+            color: #0f2b3d;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 1rem 0 0.5rem 0;
+            color: #1e4a6e;
+        }
+
+        p, li {
+            color: #1e293b;
+            margin-bottom: 0.6rem;
+        }
+
+        ul, ol {
+            padding-left: 1.3rem;
+            margin: 0.75rem 0;
+        }
+
+        li {
+            margin-bottom: 0.35rem;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #cbd5e1, transparent);
+        }
+
+        .memory-tip {
+            background: #e0f2fe;
+            padding: 0.7rem 1rem;
+            border-radius: 1rem;
+            border-left: 3px solid #0284c7;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            background: #f1f5f9;
+            border-radius: 1rem;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 0.7rem;
+            text-align: left;
+            border-bottom: 1px solid #cbd5e1;
+        }
+
+        th {
+            background: #e2e8f0;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 1.2rem;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+            .cmd-block {
+                font-size: 0.75rem;
+                padding: 0.7rem;
+            }
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* acessibilidade */
+        :focus-visible {
+            outline: 3px solid #1e6f9f;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>🐧 Terminal Linux<br>Pendrives & Sistemas de Arquivos</h1>
+        <div class="badge">📱 Guia responsivo • prático • memorização</div>
+    </div>
+
+    <div class="alert">
+        <strong>⚠️ ATENÇÃO — SEGURANÇA ACIMA DE TUDO</strong>
+        Comandos como <span class="cmd-inline">dd</span>, <span class="cmd-inline">wipefs</span> e <span class="cmd-inline">mkfs</span> podem APAGAR DADOS PERMANENTEMENTE.<br>
+        ➤ Sempre substitua <span class="cmd-inline">/dev/sdX</span> pelo dispositivo correto (ex.: <span class="cmd-inline">/dev/sdb</span>).<br>
+        ➤ Use <span class="cmd-inline">lsblk</span> para confirmar.<br>
+        ➤ Teste primeiro em pendrive sem dados importantes.
+    </div>
+
+    <h2>🔍 1. IDENTIFICAR O PENDRIVE</h2>
+    <p>Descubra qual <strong>/dev/sd*</strong> é o seu pendrive — essencial para não errar.</p>
+    <div class="cmd-block">lsblk -o NAME,SIZE,FSTYPE,TYPE,MOUNTPOINT,LABEL</div>
+    <div class="cmd-block">sudo fdisk -l</div>
+    <div class="cmd-block">sudo blkid</div>
+    <div class="cmd-block">dmesg | tail -n 20      # logo após conectar</div>
+    <div class="memory-tip">🧠 <strong>Memorize:</strong> <span class="cmd-inline">lsblk</span> • <span class="cmd-inline">fdisk -l</span> • <span class="cmd-inline">blkid</span> • <span class="cmd-inline">dmesg | tail</span></div>
+
+    <h2>📌 2. DESMONTAR & EJETAR</h2>
+    <p>Sempre desmonte antes de remover fisicamente. Evite corrupção.</p>
+    <div class="cmd-block">sudo umount /dev/sdb1</div>
+    <div class="cmd-block">sudo umount /media/usuario/NOME   # ou pelo ponto</div>
+    <p><strong>Se estiver ocupado (busy):</strong></p>
+    <div class="cmd-block">lsof /mount/point<br>sudo fuser -km /mount/point</div>
+    <div class="cmd-block">sudo eject /dev/sdb       # ejeta logicamente</div>
+    <div class="memory-tip">🧠 <strong>Comandos chave:</strong> <span class="cmd-inline">umount</span>, <span class="cmd-inline">lsof</span>, <span class="cmd-inline">fuser -km</span>, <span class="cmd-inline">eject</span>, <span class="cmd-inline">sync</span> (garante escrita)</div>
+
+    <h2>🧹 3. LIMPAR ASSINATURAS / "RESETAR"</h2>
+    <p>Remove vestígios de sistemas de arquivos antigos (ex.: NTFS, ext, FAT corrompida).</p>
+    <div class="cmd-block">sudo wipefs -a /dev/sdb</div>
+    <p>⚠️ Zerar início do disco com <span class="cmd-inline">dd</span> (muito destrutivo):</p>
+    <div class="cmd-block">sudo dd if=/dev/zero of=/dev/sdb bs=1M count=10</div>
+    <div class="memory-tip">🧠 <strong>Memorizar seguro:</strong> <span class="cmd-inline">wipefs -a</span> — limpa assinaturas sem apagar todo o disco.</div>
+
+    <h2>🗂️ 4. CRIAR/EDITAR PARTIÇÕES (MBR/GPT)</h2>
+    <p>Use <span class="cmd-inline">parted</span> ou <span class="cmd-inline">fdisk</span> para criar tabela de partições.</p>
+    <h3>Exemplo: tabela MBR + partição FAT32 ocupando todo o disco</h3>
+    <div class="cmd-block">sudo parted /dev/sdb --script mklabel msdos mkpart primary fat32 1MiB 100%</div>
+    <h3>Interativo com fdisk (clássico)</h3>
+    <div class="cmd-block">sudo fdisk /dev/sdb<br># dentro: p (listar), d (apagar), n (nova), w (salvar)</div>
+    <div class="cmd-block">sudo partprobe /dev/sdb   # atualiza kernel</div>
+    <div class="memory-tip">🧠 <strong>Para decorar:</strong> <span class="cmd-inline">parted</span> (scriptável), <span class="cmd-inline">fdisk</span> (interativo), <span class="cmd-inline">partprobe</span></div>
+
+    <h2>💿 5. FORMATAR (CRIAR SISTEMA DE ARQUIVOS)</h2>
+    <p>Escolha o formato ideal:</p>
+    <table>
+        <thead><tr><th>Sistema</th><th>Comando formato</th><th>Quando usar</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>FAT32</td><td><span class="cmd-inline">sudo mkfs.vfat -F32 -N NOME /dev/sdb1</span></td><td>Compatível com TVs, câmeras, máximo 4GB por arquivo</td></tr>
+            <tr><td>exFAT</td><td><span class="cmd-inline">sudo mkfs.exfat -n NOME /dev/sdb1</span></td><td>Arquivos grandes, Windows/macOS/Linux (instalar exfat-utils)</td></tr>
+            <tr><td>NTFS</td><td><span class="cmd-inline">sudo mkfs.ntfs -f -L NOME /dev/sdb1</span></td><td>Windows principal, arquivos grandes</td></tr>
+            <tr><td>ext4</td><td><span class="cmd-inline">sudo mkfs.ext4 -L NOME /dev/sdb1</span></td><td>Só no Linux, permissões e journaling</td></tr>
+        </tbody>
+    </table>
+    <p>Instalar suporte exFAT (Debian/Ubuntu):</p>
+    <div class="cmd-block">sudo apt update && sudo apt install exfat-utils exfat-fuse   # ou exfatprogs</div>
+    <div class="memory-tip">🧠 <strong>Fixar:</strong> <span class="cmd-inline">mkfs.vfat</span>, <span class="cmd-inline">mkfs.exfat</span>, <span class="cmd-inline">mkfs.ntfs</span>, <span class="cmd-inline">mkfs.ext4</span> | rótulo com <span class="cmd-inline">-L</span> ou <span class="cmd-inline">-n</span></div>
+
+    <h2>🔌 6. MONTAR MANUALMENTE (ACESSAR ARQUIVOS)</h2>
+    <div class="cmd-block">sudo mkdir -p /mnt/pendrive</div>
+    <div class="cmd-block">sudo mount /dev/sdb1 /mnt/pendrive</div>
+    <p>Com permissões para usuário comum (útil em FAT/exFAT):</p>
+    <div class="cmd-block">sudo mount -o uid=1000,gid=1000,umask=022 /dev/sdb1 /mnt/pendrive</div>
+    <div class="cmd-block">id -u   # descobre seu UID</div>
+    <p>Desmontar: <span class="cmd-inline">sudo umount /mnt/pendrive</span></p>
+    <div class="memory-tip">🧠 <strong>Memorizar:</strong> <span class="cmd-inline">mount</span> + opções <span class="cmd-inline">uid/gid/umask</span> • <span class="cmd-inline">umount</span> • <span class="cmd-inline">blkid</span> (UUIDs)</div>
+
+    <h2>🛠️ 7. REPARO E CHECAGEM (FSCK / NTFSFIX)</h2>
+    <div class="cmd-block">sudo umount /dev/sdb1                # sempre desmontado!</div>
+    <div class="cmd-block">sudo fsck -y /dev/sdb1               # repara automaticamente</div>
+    <div class="cmd-block">sudo fsck.ext4 -f /dev/sdb1          # específico para ext4</div>
+    <div class="cmd-block">sudo ntfsfix /dev/sdb1               # repara inconsistências NTFS</div>
+    <div class="cmd-block">sudo badblocks -v /dev/sdb           # testa setores defeituosos</div>
+    <div class="memory-tip">🧠 <strong>Essencial:</strong> <span class="cmd-inline">fsck -y</span>, <span class="cmd-inline">ntfsfix</span>, <span class="cmd-inline">badblocks</span> (diagnóstico)</div>
+
+    <h2>⚡ 8. AUTOMATIZAR "RESET COMPLETO" (PENDRIVE NOVO)</h2>
+    <p>Limpar tudo, criar partição única FAT32 e formatar em segundos (substitua <span class="cmd-inline">/dev/sdb</span>).</p>
+    <div class="cmd-block">sudo umount /dev/sdb1 2>/dev/null<br>
+sudo wipefs -a /dev/sdb<br>
+sudo parted /dev/sdb --script mklabel msdos mkpart primary fat32 1MiB 100%<br>
+sudo partprobe /dev/sdb<br>
+sudo mkfs.vfat -F32 -n MEU_PENDRIVE /dev/sdb1
+    </div>
+    <p>Após isso, basta montar e usar. ✅</p>
+
+    <h2>🧪 9. COMPATIBILIDADE: ESCOLHA O FILESYSTEM IDEAL</h2>
+    <ul>
+        <li><strong>FAT32</strong> → TVs, câmeras, consoles antigos, mas arquivo ≤4GB.</li>
+        <li><strong>exFAT</strong> → melhor universal moderno (Windows, macOS, Linux).</li>
+        <li><strong>NTFS</strong> → foco Windows, journaling robusto.</li>
+        <li><strong>ext4</strong> → só Linux, permissões Unix, snapshots (via ferramentas).</li>
+    </ul>
+    <p>💡 Dica: entre Windows/macOS/Linux → <strong>exFAT</strong> é a melhor escolha.</p>
+
+    <h2>🔐 10. PERMISSÕES E ATRIBUTOS</h2>
+    <p>Em FAT/exFAT as permissões Unix não são nativas; use opções de montagem. Em ext4 use <span class="cmd-inline">chmod</span>/<span class="cmd-inline">chown</span>.</p>
+    <div class="cmd-block">sudo chown usuario:grupo /mnt/pendrive<br>sudo chmod 755 /mnt/pendrive</div>
+    <div class="cmd-block">lsattr /caminho/arquivo   # atributos extendidos (ext4)<br>sudo chattr +i arquivo    # imutável</div>
+    <div class="memory-tip">🧠 <span class="cmd-inline">chmod</span>, <span class="cmd-inline">chown</span>, <span class="cmd-inline">lsattr/chattr</span></div>
+
+    <h2>🧰 11. COMANDOS DE DIAGNÓSTICO & LOGS</h2>
+    <div class="cmd-block">dmesg | grep -i usb<br>journalctl -k -f         # mensagens em tempo real<br>lsof | grep /dev/sdb1<br>sudo fuser -v /mnt/pendrive</div>
+    <p>Use <span class="cmd-inline">tail -f /var/log/syslog</span> para eventos ao plugar o pendrive.</p>
+
+    <h2>🔒 12. SEGURANÇA EXTRA: CRIPTOGRAFIA (LUKS)</h2>
+    <p>Proteja dados sensíveis no pendrive:</p>
+    <div class="cmd-block">sudo cryptsetup luksFormat /dev/sdb1<br>sudo cryptsetup open /dev/sdb1 cofre<br>sudo mkfs.ext4 /dev/mapper/cofre<br>sudo mount /dev/mapper/cofre /mnt/secure</div>
+    <div class="memory-tip">🧠 <span class="cmd-inline">cryptsetup luksFormat</span> • <span class="cmd-inline">cryptsetup open</span></div>
+
+    <hr>
+
+    <h2>📚 RESUMO DOS COMANDOS-CHAVE (DECORE ESTES!)</h2>
+    <ul>
+        <li><span class="cmd-inline">lsblk</span> – ver discos/partições</li>
+        <li><span class="cmd-inline">sudo fdisk -l</span> – tabela de partições</li>
+        <li><span class="cmd-inline">sudo umount /dev/sdX1</span> – desmontar</li>
+        <li><span class="cmd-inline">sudo wipefs -a /dev/sdX</span> – limpar assinaturas</li>
+        <li><span class="cmd-inline">sudo parted /dev/sdX mklabel msdos mkpart primary fat32 1MiB 100%</span> – partição rápida</li>
+        <li><span class="cmd-inline">sudo mkfs.exfat -n RÓTULO /dev/sdX1</span> – formatar exFAT</li>
+        <li><span class="cmd-inline">sudo mount -o uid=1000,gid=1000 /dev/sdX1 /mnt/pasta</span> – montar com permissões</li>
+        <li><span class="cmd-inline">sudo fsck -y /dev/sdX1</span> – reparar sistema de arquivos</li>
+        <li><span class="cmd-inline">sync && sudo eject /dev/sdX</span> – ejeção segura</li>
+    </ul>
+
+    <div class="alert" style="background:#dbeafe; border-left-color:#2563eb;">
+        <strong>🎓 CONCEITO APLICADO — Sistema de Arquivos (recapitulação)</strong>
+        Um sistema de arquivos organiza bytes em blocos lógicos dentro de uma partição. A tabela de partições (MBR/GPT) define onde cada partição começa e termina. <br>
+        ➤ Comandos como <span class="cmd-inline">mkfs</span> criam estruturas (inodes, tabelas FAT, journals). <br>
+        ➤ <span class="cmd-inline">mount</span> conecta essa estrutura à árvore de diretórios do Linux.<br>
+        ➤ <span class="cmd-inline">umount</span> finaliza acesso e garante consistência.<br>
+        🔁 Saber isso evita erros comuns: “disco sujo” resolve com <span class="cmd-inline">fsck</span>, partição desaparecida resolve com <span class="cmd-inline">parted</span> e <span class="cmd-inline">partprobe</span>.
+    </div>
+
+    <h2>💡 DICAS FINAIS (celular/desktop)</h2>
+    <ul>
+        <li>✔ Sempre execute <span class="cmd-inline">lsblk</span> <strong>antes e depois</strong> de conectar o pendrive.</li>
+        <li>✔ Use alias: <span class="cmd-inline">alias lsusbdrives='lsblk -o NAME,SIZE,MODEL,FSTYPE,MOUNTPOINT'</span></li>
+        <li>✔ Para desmontagem forçada: <span class="cmd-inline">sudo fuser -km /mount/point && sudo umount /mount/point</span></li>
+        <li>✔ Nunca desconecte sem <span class="cmd-inline">umount</span> ou "ejetar" no sistema gráfico.</li>
+        <li>✔ A interface gráfica (GParted) é excelente, mas conhecer os comandos fornece controle total.</li>
+    </ul>
+
+    <footer>
+        🐚 Guia didático - Terminal Linux • Use com responsabilidade • Sempre faça backup!<br>
+        Substitua /dev/sdX pelo dispositivo correto — pratique em pendrive reserva.
+    </footer>
+</div>
+</body>
+</html>

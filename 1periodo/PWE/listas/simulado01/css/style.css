@@ -1,0 +1,106 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+header>nav>ul{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: orangered;
+    justify-content: center;
+}
+nav>ul>li{
+    list-style: none;
+    text-decoration: none;
+    padding: 20px 20px;
+    color: white;
+}
+nav>ul>li:hover{
+    background-color: white;
+    color: orangered;
+    cursor: pointer;
+    
+}
+p{
+    text-align: justify;
+}
+section:nth-last-of-type(even){
+    background-color: rgb(17, 17, 132);
+}
+.imgLogo{
+    width: 300px;
+    height: 300px;
+    background-image: url(../img/logoManutencao.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+}
+section, h1, h2, h3{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+section>div{
+    width: 380px;
+    margin: auto;
+}
+.container{
+    background-color: white;
+    margin: auto;
+    text-align: center;
+    border: 5px solid orangered;
+    border-radius: 25px;
+}
+section>div>div>h3{
+    color:red;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+.grid>div>p, details{
+    text-align: justify;
+}
+
+details>summary{
+    color: orangered;
+    cursor: pointer;
+    font-weight: bold;
+}
+section>div>p, h3, details>p, details{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+footer, footer>p{
+    background-color: rgb(134, 45, 13);
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+/* responsividade para desktop */
+
+@media screen and (min-width: 768px) {
+    header>nav>ul{
+        justify-content: end;
+    }
+    section:nth-last-of-type(even){
+        background-color: rgb(17, 17, 132);
+    }
+    .imgLogo{
+        width: 850px;
+        height: 300px;
+        background-image: url(../img/logos.png);
+        background-size: 800px;
+    }
+    section>div{
+        width: 1200px;
+        margin: auto;
+    }
+    .grid{
+        grid-template-columns: repeat(4, 1fr);
+    }    
+    
+}

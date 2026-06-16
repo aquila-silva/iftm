@@ -1,0 +1,156 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Roboto, Arial;
+}
+nav ul{
+    background-color: darkblue;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+}
+nav ul li a:link, nav ul li a:visited, nav ul li{
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px ;
+    
+}
+nav ul li a:hover, nav ul li:hover{
+    text-decoration: underline;
+}
+header img{
+    width: 100%;
+}
+body{
+    background-color: black;
+}
+section{
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    padding: 35px 10px 20px 10px;
+}
+section:nth-last-of-type(even){
+    background-color: lightgray;
+}
+p, h1, h2,section form,section div {
+   margin: 15px;
+  
+}
+.secCompromissos div{
+    margin-left: 15px;
+}
+h3{
+    margin: 0px 15px 15px 15px;
+}
+input{
+    color:white;
+    background-color: black;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px 30px;
+    font-size: 14px;
+}
+input:hover{
+    background-color: orangered !important;
+    cursor: pointer;
+}
+
+.secCompromissos input, .secQuemSomos input, .blue{
+    background-color: blue;
+}
+.secCompromissos img{
+    width: 30px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    
+}
+.container input{
+    margin: auto !important;
+    display: block;
+}
+.container p{
+    text-align: justify;
+    margin: 0px;
+}
+.secImage img{
+    width: 90%;
+    margin: auto !important;
+    padding-bottom: 15px;
+    display: block;
+}
+.secQuemSomos{
+    text-align: center;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.grid img{
+    width: 200px;
+    display: block;
+    margin: auto  !important;
+}
+
+
+/* RESPONSIVIDADE  */
+
+@media  screen and (min-width: 600px) {
+    nav ul{
+        flex-direction: row;
+    }
+    nav ul li a:link, nav ul li a:visited, nav ul li{
+        padding: 10px;
+    }
+    .container{
+        flex-direction: row;
+        padding: 15px;
+    }
+
+    .secImage .container{
+        padding: 40px;
+    }
+    .grid{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+
+    }
+    .grid>div{
+        height: 600px;
+        justify-content: center;
+        flex-grow: 1;   
+        width: 600px;
+    }
+    .grid img{
+        width: 100%;
+        padding: 0px;
+        margin: auto;
+        display: block;
+        
+    }
+    .grid>div>div{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .grid input {
+        margin: 0px !important;
+        display: block;
+    }
+    
+}

@@ -39,6 +39,9 @@ section{
 section:nth-last-of-type(even){
     background-color: lightgray;
 }
+.sec1 h1{
+    font-size: 34px;
+}
 p, h1, h2,section form,section div {
    margin: 15px;
   

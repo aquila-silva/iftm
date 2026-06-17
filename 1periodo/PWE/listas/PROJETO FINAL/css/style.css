@@ -13,17 +13,21 @@ nav>ul{
     flex-direction: column;
     list-style: none;
     justify-content: center;
+    border: 4px solid #5abef8;
 }
 nav>ul>li>a:link, nav>ul>li>a:visited{
     text-decoration: none;
-    padding: 15px;
+    padding: 10px;
     display: inline-block;
     color: white;
     font-weight: bold;
-    
+    width: 100%;
+
+}
+nav>ul>li:not(:first-child){
+    border-top: 1px solid #5999fa;
 }
 nav>ul>li>a:hover, nav>ul>li:hover{ 
-    background-color: white;
     color: #021338;
 }
 .box{
@@ -82,13 +86,14 @@ section{
     background-color: white;
 }
 section:nth-last-of-type(even){
-    background-color: rgb(221, 238, 255);
+    background-color: rgb(238, 247, 255);
 }
 
 .container{
     display: flex;
     flex-direction: column;
     text-align: justify;
+    justify-content: center;
     gap: 30px;
     margin: 15px 0px 15px 0px;
     width: 100%;
@@ -107,6 +112,7 @@ input[type="button"]{
 input[type="button"]:hover{
     background-color: #2aaeb3;
     color: #021338;
+    cursor: pointer;
 }
 h1, h2,h3, p{
     padding: 15px;
@@ -145,10 +151,18 @@ h1:hover{
 .secContato>div>div{
     flex-grow: 1;
 }
-footer p{
+footer p, footer a:link, footer a:visited{
     color: white;
     text-align: center;
+    text-decoration: none;
     padding: 20px;
+}
+footer a:hover{
+    text-decoration: underline;
+}
+footer div div{
+    border: 1px solid white;
+    border-radius: 10px;
 }
 /* Responsividade Desktop*/
 @media screen and (min-width: 700px){
@@ -174,5 +188,9 @@ footer p{
     }
     .whats img{
         width: 100px;
+    }
+    nav>ul>li:not(:first-child){
+    border-top: 0px solid #5999fa;
+    border-left: 1px solid #5999fa;
     }
 }

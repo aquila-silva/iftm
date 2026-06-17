@@ -2,4 +2,177 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    font-family: ;
+}
+body{
+    background: linear-gradient(to right, #021338, #2aaeb3);
+}
+nav>ul{
+    background-color: #5abef8;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+}
+nav>ul>li>a:link, nav>ul>li>a:visited{
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    
+}
+nav>ul>li>a:hover, nav>ul>li:hover{ 
+    background-color: white;
+    color: #021338;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+}
+.box h3{
+    color: #5abef8;
+}
+.box ul{
+    list-style: none;
+}
+.box a:link, .box a:visited{
+    text-decoration: none;
+    color:#133261;
+}
+.box a:hover{
+    text-decoration: underline;
+}
+.box div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+nav div{
+    display: flex; 
+    margin: auto;
+    justify-content: center;  
+    background-color: white;
+}
+nav img{
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+.whats{
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    right: 5px;
+}
+.whats img{
+    width: 100px;
+    transition: 0.3s;
+}
+.whats img:hover{
+    width: 110px;
+}
+.secHome{
+    margin:120px 10px 120px 10px;
+    border-radius: 25px;
+}
+section{
+    padding: 40px;
+    margin: auto;
+    background-color: white;
+}
+section:nth-last-of-type(even){
+    background-color: rgb(221, 238, 255);
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 30px;
+    margin: 15px 0px 15px 0px;
+    width: 100%;
+    flex-basis: 1;
+}
+input[type="button"]{
+    padding: 10px 20px;
+    border: 0px;
+    background-color: #021338;
+    color: aliceblue;
+    font-weight: bold;
+    margin: auto;
+    display: block;
+    
+}
+input[type="button"]:hover{
+    background-color: #2aaeb3;
+    color: #021338;
+}
+h1, h2,h3, p{
+    padding: 15px;
+}
+.container h3{
+    text-align: center;
+    margin: 15px;
+
+}
+h2{
+    text-align: center;
+    color: rgb(0, 72, 139);
+}
+h1{
+    text-align: center;
+    display: block;
+    transition: 0.5s;
+}
+h1:hover{
+    color: #2aaeb3;
+    letter-spacing: 2px;
+    border-bottom: #021338;
+    padding: 12px;
+}
+.secContato .container { 
+    flex-basis: auto;
+}
+.blue{
+    background-color: #021338;
+    color: #2aaeb3; 
+    flex-grow: 2;  
+}
+.blue li{
+    list-style: none;
+}
+.secContato>div>div{
+    flex-grow: 1;
+}
+footer p{
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+/* Responsividade Desktop*/
+@media screen and (min-width: 700px){
+    nav ul{
+    flex-direction: row;
+    justify-content: left;
+    }
+    nav div{
+        justify-content: left;
+        left: ;
+    }
+    nav img{
+        margin-left: 25px;
+    }
+    .box{
+        flex-direction: row;
+    }
+    .container{
+        flex-direction: row;
+    }
+    .whats{
+        right: 25px;
+    }
+    .whats img{
+        width: 100px;
+    }
 }

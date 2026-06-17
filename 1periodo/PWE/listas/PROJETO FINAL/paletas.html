@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ELEVAR — Kit de Identidade Visual</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul-royal:  #0A2E8C;
+      --ciano:       #00C8E8;
+      --naval:       #061560;
+      --gelo:        #C8E8F0;
+      --branco:      #FFFFFF;
+      --cinza-claro: #F4F7FB;
+      --texto:       #1A1F36;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--cinza-claro);
+      color: var(--texto);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--naval) 0%, var(--azul-royal) 55%, var(--ciano) 100%);
+      padding: 60px 48px 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+    }
+    .hero-text h1 span { color: var(--ciano); }
+    .hero-text p {
+      margin-top: 8px;
+      font-size: 1rem;
+      color: rgba(255,255,255,.75);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .hero-badge {
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 14px;
+      padding: 18px 28px;
+      color: #fff;
+      font-size: .85rem;
+      line-height: 1.7;
+      backdrop-filter: blur(6px);
+    }
+    .hero-badge strong { color: var(--ciano); font-size: .9rem; }
+
+    /* ─── SECTION ─── */
+    section { padding: 56px 48px; }
+    section:nth-child(even) { background: #fff; }
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--ciano);
+      color: var(--naval);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--azul-royal);
+      margin-bottom: 6px;
+    }
+    .section-sub {
+      font-size: .93rem;
+      color: #6b7280;
+      margin-bottom: 36px;
+    }
+
+    /* ─── PALETA ─── */
+    .palette-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    .swatch {
+      flex: 1 1 140px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,.08);
+    }
+    .swatch-color {
+      height: 100px;
+    }
+    .swatch-info {
+      padding: 14px 16px;
+      background: #fff;
+    }
+    .swatch-info .name {
+      font-weight: 700;
+      font-size: .9rem;
+      color: var(--texto);
+    }
+    .swatch-info .hex {
+      font-size: .82rem;
+      color: #6b7280;
+      margin-top: 3px;
+      font-family: monospace;
+    }
+    .swatch-info .usage {
+      font-size: .78rem;
+      color: #9ca3af;
+      margin-top: 5px;
+    }
+
+    /* paleta visual gerada */
+    .palette-img {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 6px 32px rgba(0,0,0,.1);
+      margin-bottom: 40px;
+    }
+
+    /* ─── ASSETS GRID ─── */
+    .assets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 28px;
+    }
+    .asset-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(0,0,0,.07);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .asset-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.13);
+    }
+    .asset-card .thumb {
+      width: 100%;
+      display: block;
+      object-fit: cover;
+    }
+    .asset-card.portrait .thumb {
+      max-height: 380px;
+      object-fit: cover;
+    }
+    .asset-meta {
+      padding: 18px 20px 22px;
+    }
+    .asset-meta .tag {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ciano);
+      background: rgba(0,200,232,.1);
+      border-radius: 6px;
+      padding: 3px 9px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .asset-meta h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--azul-royal);
+      margin-bottom: 4px;
+    }
+    .asset-meta p {
+      font-size: .84rem;
+      color: #6b7280;
+      line-height: 1.55;
+    }
+    .asset-meta .spec {
+      display: flex;
+      gap: 10px;
+      margin-top: 12px;
+      flex-wrap: wrap;
+    }
+    .asset-meta .spec span {
+      font-size: .75rem;
+      color: #374151;
+      background: #f3f4f6;
+      border-radius: 6px;
+      padding: 3px 9px;
+      font-weight: 500;
+    }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 14px;
+      background: linear-gradient(135deg, var(--azul-royal), var(--ciano));
+      color: #fff;
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 600;
+      padding: 8px 18px;
+      border-radius: 8px;
+      transition: opacity .2s;
+    }
+    .download-btn:hover { opacity: .85; }
+
+    /* ─── GUIDELINES ─── */
+    .guidelines-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .guide-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      border-left: 4px solid var(--ciano);
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .guide-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--azul-royal);
+      margin-bottom: 10px;
+    }
+    .guide-card ul {
+      list-style: none;
+      padding: 0;
+    }
+    .guide-card ul li {
+      font-size: .85rem;
+      color: #4b5563;
+      padding: 5px 0;
+      border-bottom: 1px solid #f3f4f6;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .guide-card ul li:last-child { border-bottom: none; }
+    .guide-card ul li::before {
+      content: "→";
+      color: var(--ciano);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ─── TYPOGRAPHY PREVIEW ─── */
+    .typo-preview {
+      background: linear-gradient(135deg, var(--naval), var(--azul-royal));
+      border-radius: 20px;
+      padding: 40px 44px;
+      color: #fff;
+      margin-bottom: 32px;
+    }
+    .typo-preview .display { font-size: 2.8rem; font-weight: 800; letter-spacing: -1px; color: #fff; }
+    .typo-preview .tagline { font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; color: var(--ciano); margin-top: 6px; }
+    .typo-preview .body-text { font-size: .95rem; color: rgba(255,255,255,.75); margin-top: 18px; line-height: 1.7; max-width: 520px; }
+    .typo-preview .cta {
+      display: inline-block;
+      margin-top: 22px;
+      background: var(--ciano);
+      color: var(--naval);
+      font-weight: 700;
+      font-size: .88rem;
+      padding: 12px 24px;
+      border-radius: 10px;
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--naval);
+      padding: 36px 48px;
+      text-align: center;
+      color: rgba(255,255,255,.5);
+      font-size: .82rem;
+    }
+    footer strong { color: var(--ciano); }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-text">
+    <h1>Ele<span>Var</span></h1>
+    <p>Climatização · Conforto · Bem-Estar</p>
+  </div>
+  <div class="hero-badge">
+    <strong>Kit de Identidade Visual</strong><br>
+    Paleta oficial · Fundos utilizáveis<br>
+    Guia de uso · Tipografia
+  </div>
+</div>
+
+<!-- PALETA DE CORES -->
+<section>
+  <div class="section-label">🎨 Cores</div>
+  <h2 class="section-title">Paleta de Cores Oficial</h2>
+  <p class="section-sub">As cores primárias e secundárias que definem a identidade da ELEVAR.</p>
+
+  <img class="palette-img"
+       src="https://skyagent-artifacts.skywork.ai/router/agent/2026-06-16/prod_agent_47c24758-378d-4219-aa5a-65b9de880f9a/elevar_paleta_cores_2_3421576e335043538b36103796b634cd.png"
+       alt="Paleta de Cores ELEVAR" />
+
+  <div class="palette-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0A2E8C;"></div>
+      <div class="swatch-info">
+        <div class="name">Azul Royal</div>
+        <div class="hex">#0A2E8C</div>
+        <div class="usage">Cor primária · Logo · Títulos</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#00C8E8;"></div>
+      <div class="swatch-info">
+        <div class="name">Ciano ELEVAR</div>
+        <div class="hex">#00C8E8</div>
+        <div class="usage">Destaque · Botões · Ícones</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFFFFF; border:1px solid #e5e7eb;"></div>
+      <div class="swatch-info">
+        <div class="name">Branco</div>
+        <div class="hex">#FFFFFF</div>
+        <div class="usage">Fundos · Textos em dark bg</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#061560;"></div>
+      <div class="swatch-info">
+        <div class="name">Azul Naval</div>
+        <div class="hex">#061560</div>
+        <div class="usage">Backgrounds escuros · Rodapés</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#C8E8F0;"></div>
+      <div class="swatch-info">
+        <div class="name">Azul Gelo</div>
+        <div class="hex">#C8E8F0</div>
+        <div class="usage">Fundos claros · Áreas de respiro</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIPOGRAFIA -->
+<section>
+  <div class="section-label">✍️ Tipografia</div>
+  <h2 class="section-title">Hierarquia Tipográfica</h2>
+  <p class="section-sub">Exemplo de como aplicar o texto com a identidade ELEVAR.</p>
+
+  <div class="typo-preview">
+    <div class="display">EleVar</div>
+    <div class="tagline">Climatização · Conforto · Bem-Estar</div>
+    <div class="body-text">Especialistas em instalação e manutenção de ar condicionado. Levamos conforto e bem-estar para sua residência ou empresa com qualidade garantida.</div>
+    <div class="cta">Solicite um Orçamento Grátis →</div>
+  </div>
+</section>
+
+<!-- FUNDOS / BACKGROUNDS -->
+<section>
+  <div class="section-label">🖼️ Fundos</div>
+  <h2 class="section-title">Imagens de Fundo Utilizáveis</h2>
+  <p class="section-sub">Prontas para usar em posts, banners, stories, sites e materiais de marketing.</p>
+
+  <div class="assets-grid">
+
+    <!-- Fundo Banner -->
+    <div class="asset-card">
+      <img class="thumb"
+           src="https://skyagent-artifacts.skywork.ai/router/agent/2026-06-16/prod_agent_47c24758-378d-4219-aa5a-65b9de880f9a/elevar_fundo_banner_2_c7287f14f1334deb9b6a474419139825.png"
+           alt="Fundo Banner ELEVAR" />
+      <div class="asset-meta">
+        <div class="tag">Banner / Header</div>
+        <h3>Fundo Gradiente Azul</h3>
+        <p>Gradiente do azul naval ao ciano com linhas de fluxo de ar. Ideal para banners de site, capas de e-mail e headers de apresentação.</p>
+        <div class="spec">
+          <span>16:9</span><span>Paisagem</span><span>Web · Impressão</span>
+        </div>
+        <a class="download-btn" href="https://skyagent-artifacts.skywork.ai/router/agent/2026-06-16/prod_agent_47c24758-378d-4219-aa5a-65b9de880f9a/elevar_fundo_banner_2_c7287f14f1334deb9b6a474419139825.png" download>⬇ Baixar PNG</a>
+      </div>
+    </div>
+
+    <!-- Fundo Stories -->
+    <div class="asset-card portrait">
+      <img class="thumb"
+           src="https://skyagent-artifacts.skywork.ai/router/agent/2026-06-16/prod_agent_47c24758-378d-4219-aa5a-65b9de880f9a/elevar_fundo_stories_2_c52ac67e1850495f943ad234916c1062.png"
+           alt="Fundo Stories ELEVAR" />
+      <div class="asset-meta">
+        <div class="tag">Stories / Reels</div>
+        <h3>Fundo Naval com Ciano</h3>
+        <p>Fundo escuro profissional com brilho ciano. Perfeito para Stories do Instagram, TikTok, WhatsApp e peças verticais de redes sociais.</p>
+        <div class="spec">
+          <span>9:16</span><span>Vertical</span><span>Social Media</span>
+        </div>
+        <a class="download-btn" href="https://skyagent-artifacts.skywork.ai/router/agent/2026-06-16/prod_agent_47c24758-378d-4219-aa5a-65b9de880f9a/elevar_fundo_stories_2_c52ac67e1850495f943ad234916c1062.png" download>⬇ Baixar PNG</a>
+      </div>
+    </div>
+
+    <!-- Fundo Interior -->
+    <div class="asset-card">
+      <img class="thumb"
+           src="https://skyagent-artifacts.skywork.ai/router/agent/2026-06-16/prod_agent_47c24758-378d-4219-aa5a-65b9de880f9a/elevar_fundo_interior_2_c55322cbfee146f8a7bd551e804b0331.png"
+           alt="Fundo Interior ELEVAR" />
+      <div class="asset-meta">
+        <div class="tag">Lifestyle · Ambiente</div>
+        <h3>Interior Moderno</h3>
+        <p>Sala moderna e luminosa com ar condicionado e fluxo de ar ciano. Ideal para posts de produto, landing pages e anúncios aspiracionais.</p>
+        <div class="spec">
+          <span>16:9</span><span>Paisagem</span><span>Anúncios · Portfólio</span>
+        </div>
+        <a class="download-btn" href="https://skyagent-artifacts.skywork.ai/router/agent/2026-06-16/prod_agent_47c24758-378d-4219-aa5a-65b9de880f9a/elevar_fundo_interior_2_c55322cbfee146f8a7bd551e804b0331.png" download>⬇ Baixar PNG</a>
+      </div>
+    </div>
+
+    <!-- Fundo Ondas -->
+    <div class="asset-card">
+      <img class="thumb"
+           src="https://skyagent-artifacts.skywork.ai/router/agent/2026-06-16/prod_agent_47c24758-378d-4219-aa5a-65b9de880f9a/elevar_fundo_ondas_2_2cf33c2f2d7841b88c7f80e56db297be.png"
+           alt="Fundo Ondas ELEVAR" />
+      <div class="asset-meta">
+        <div class="tag">Minimalista · Clean</div>
+        <h3>Fundo Ondas Abstratas</h3>
+        <p>Fundo branco minimalista com ondas suaves em azul e ciano. Excelente como base para folhetos, cartões, propostas e apresentações.</p>
+        <div class="spec">
+          <span>16:9</span><span>Paisagem</span><span>Impressão · PPT · PDF</span>
+        </div>
+        <a class="download-btn" href="https://skyagent-artifacts.skywork.ai/router/agent/2026-06-16/prod_agent_47c24758-378d-4219-aa5a-65b9de880f9a/elevar_fundo_ondas_2_2cf33c2f2d7841b88c7f80e56db297be.png" download>⬇ Baixar PNG</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIRETRIZES -->
+<section>
+  <div class="section-label">📐 Diretrizes</div>
+  <h2 class="section-title">Guia de Uso da Identidade</h2>
+  <p class="section-sub">Boas práticas para manter a consistência da marca ELEVAR em todos os materiais.</p>
+
+  <div class="guidelines-grid">
+    <div class="guide-card">
+      <h4>🎨 Cores</h4>
+      <ul>
+        <li>Use Azul Royal como cor dominante</li>
+        <li>Ciano apenas em destaques e CTAs</li>
+        <li>Nunca misture o Ciano com tons quentes</li>
+        <li>Fundo escuro → texto branco ou ciano</li>
+        <li>Fundo claro → texto azul royal</li>
+      </ul>
+    </div>
+    <div class="guide-card">
+      <h4>🔡 Tipografia</h4>
+      <ul>
+        <li>Fontes sem serifa modernas (Inter, Poppins)</li>
+        <li>Títulos: peso 800, maiúsculas ou misto</li>
+        <li>Corpo: peso 400–600, tamanho 14–16px</li>
+        <li>Espaçamento generoso entre elementos</li>
+        <li>Tagline sempre em letras maiúsculas</li>
+      </ul>
+    </div>
+    <div class="guide-card">
+      <h4>🖼️ Imagens</h4>
+      <ul>
+        <li>Ambientes modernos e clean</li>
+        <li>Tons frios e azulados nas fotos</li>
+        <li>Evitar imagens quentes/amareladas</li>
+        <li>Efeitos de fluxo de ar em ciano</li>
+        <li>Pessoas confortáveis e sorridentes</li>
+      </ul>
+    </div>
+    <div class="guide-card">
+      <h4>📐 Layout</h4>
+      <ul>
+        <li>Margens amplas — mais respiro, mais premium</li>
+        <li>Grid limpo e alinhado</li>
+        <li>Um elemento de destaque por peça</li>
+        <li>Gradientes sempre do naval ao ciano</li>
+        <li>Cantos arredondados em elementos UI</li>
+      </ul>
+    </div>
+    <div class="guide-card">
+      <h4>✅ Aplicações Corretas</h4>
+      <ul>
+        <li>Logo sobre fundo azul ou branco</li>
+        <li>Botão CTA em ciano (#00C8E8)</li>
+        <li>Ícones na cor primária ou ciano</li>
+        <li>Fundos escuros para peças de destaque</li>
+        <li>Ondas/fluxo de ar como elemento gráfico</li>
+      </ul>
+    </div>
+    <div class="guide-card">
+      <h4>❌ Evitar</h4>
+      <ul>
+        <li>Outras cores não listadas na paleta</li>
+        <li>Logo sobre fundos coloridos/texturizados</li>
+        <li>Muitos elementos competindo atenção</li>
+        <li>Fontes serifadas ou manuscritas</li>
+        <li>Imagens com filtros quentes (laranja/amarelo)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>ELEVAR</strong> — Climatização · Conforto · Bem-Estar<br>
+  Kit de Identidade Visual · Todos os assets prontos para uso
+</footer>
+
+</body>
+</html>

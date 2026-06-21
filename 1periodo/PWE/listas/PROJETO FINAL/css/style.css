@@ -76,17 +76,38 @@ nav img{
 .whats img:hover{
     width: 110px;
 }
-.secHome{
-    margin:120px 10px 120px 10px;
-    border-radius: 25px;
-}
 section{
     padding: 40px;
     margin: auto;
     background-color: white;
+    width: 90%;
 }
-section:nth-last-of-type(even){
-    background-color: rgb(238, 247, 255);
+.secImg{
+    justify-content: center;
+    margin-top: 20px;
+    background-color: unset;
+}
+.secImg img{
+    width: 90%;
+    border-radius: 25px;
+    display: block;
+    margin: auto !important;
+    border-right: 4px solid #133261;
+    border-bottom: 4px solid #133261;
+}
+
+.navegacao {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.navegacao a {
+  text-decoration: none;
+  background-color: #ccc;
+  padding: 5px 10px;
+  border-radius: 50%;
+  color: #000;
+  margin: 0 5px;
 }
 
 .container{
@@ -107,6 +128,7 @@ input[type="button"]{
     font-weight: bold;
     margin: auto;
     display: block;
+    border-radius: 8px;
     
 }
 input[type="button"]:hover{

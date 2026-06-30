@@ -176,7 +176,8 @@ section:nth-of-type(1) {
     flex-basis: 1;
 }
 
-input[type="button"], input[type="submit"] {
+input[type="button"],
+input[type="submit"] {
     padding: 15px 30px;
     border: 0px;
     background-color: #021338;
@@ -190,21 +191,27 @@ input[type="button"], input[type="submit"] {
 
 }
 
-input[type="button"]:hover, input[type="submit"]:hover {
+input[type="button"]:hover,
+input[type="submit"]:hover {
     background-color: #2aaeb3;
     color: #021338;
     cursor: pointer;
 }
-input, textarea{
+
+input,
+textarea {
     width: 100%;
     background-color: #9afce748;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.192);
 }
-input:hover, textarea:hover{
+
+input:hover,
+textarea:hover {
     background-color: #80ffea9f;
 }
-textarea{
+
+textarea {
     height: 250px;
 }
 
@@ -275,12 +282,14 @@ h1:hover {
     display: block;
     margin: auto;
 }
+
 .servicos div div img:hover {
     border-bottom: 3px solid #ffffff;
     border-right: 3px solid #ffffff;
     box-shadow: 2px 3px 10px #7bb0ff;
 }
-.card{
+
+.card {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     flex-direction: column;
@@ -288,26 +297,33 @@ h1:hover {
     text-align: center;
     gap: 20px;
 }
-.card a:link, .card a:visited{
+
+.card a:link,
+.card a:visited {
     text-decoration: none;
     color: white;
 }
-.card a:hover{
+
+.card a:hover {
     text-decoration: und;
 }
-.card div{
+
+.card div {
     background-color: #133261;
     border-radius: 20px;
     color: white;
 }
-.historia img{
+
+.historia img {
     width: 100%;
 }
-.secHome2 img{
+
+.secHome2 img {
     width: 95%;
     display: block;
     margin: auto;
 }
+
 footer p,
 footer a:link,
 footer a:visited {
@@ -362,7 +378,7 @@ footer div div {
 
     .container {
         flex-direction: row;
-        
+
     }
 
     .whats {
@@ -374,35 +390,39 @@ footer div div {
     }
 
     .secImg img:hover {
-    border-right: 4px solid #6bdcff;
-    border-bottom: 4px solid #6bdcff;
-}
+        border-right: 4px solid #6bdcff;
+        border-bottom: 4px solid #6bdcff;
+    }
 
     nav>ul>li:not(:first-child) {
         border-top: 0px solid #5999fa;
         border-left: 1px solid #5999fa;
     }
-    .form div div:nth-of-type(1){
+
+    .form div div:nth-of-type(1) {
         width: 40%;
     }
-    .form div div:nth-of-type(2){
+
+    .form div div:nth-of-type(2) {
         width: 60%;
     }
 
-    
-    .diretrizes div div{
-        background-color: #bafaff;    
-        border-radius: 15px; 
-        padding: 20px;   
+
+    .diretrizes div div {
+        background-color: #bafaff;
+        border-radius: 15px;
+        padding: 20px;
     }
-    .historia div div:nth-of-type(1){
+
+    .historia div div:nth-of-type(1) {
         display: flex;
         align-items: center;
     }
-    .diretrizes h3{
+
+    .diretrizes h3 {
         font-size: 20px;
     }
-    
+
 
     .secHome {
         border-radius: 20px 20px 0 0;
@@ -427,10 +447,12 @@ footer div div {
         border-right: 4px solid #6bdcff;
         border-bottom: 4px solid #6bdcff;
     }
+
     .servicos div div {
-    width: 33%;
+        width: 33%;
     }
-    .card{
+
+    .card {
         grid-template-columns: repeat(2, 1fr);
     }
 }

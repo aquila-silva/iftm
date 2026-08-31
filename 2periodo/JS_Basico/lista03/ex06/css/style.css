@@ -1,0 +1,28 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+}
+div div{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 10px;
+    gap: 8px;
+}
+
+label{
+    width: 100px;
+}
+
+input{
+    width: 100%;
+    padding: 3px;
+}

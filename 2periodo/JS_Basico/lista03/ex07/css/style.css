@@ -1,0 +1,52 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+body{
+    padding: 10px;
+}
+
+table{
+    display: block;
+    width: max-content;
+    border: 1px solid black;
+    margin: auto;
+    padding: 10px;
+}
+
+input[type="text"]{
+    width: 100%;
+}
+
+input[type="button"]{
+    padding: 5px;
+}
+
+
+.button div{
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    margin: auto;
+    gap: 5px;
+}
+
+h2{
+    font-size: 24px;
+    color: blue;
+    font-family: Verdana;
+    text-align: center;
+    padding: 5px;
+}
+
+p{
+    color: red;
+    font-size: 10px; 
+    font-family: Verdana;
+}
+
+label{
+    display: flex;
+    direction: rtl;
+}

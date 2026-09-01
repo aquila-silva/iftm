@@ -1,12 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
     <title>Document</title>
 </head>
+
 <body>
-    
+
+    <table>
+        <tr>
+            <th colspan="3">
+                <h2>Acesso ao Sistema</h2>
+            </th>
+        </tr>
+
+
+        <tr>
+            <td>
+                <label>Login </label>
+            </td>
+            <td colspan="2"> 
+                <input type="text" id="login">
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <label>Senha </label>
+            </td>
+            <td>
+                <input type="password" id="senha">
+            </td>
+            <td>
+                <p>(max. 8 caracteres)</p>
+            </td>
+
+        </tr>
+
+        <tr>
+            <td>
+                <label>Confirmar Senha </label>
+            </td>
+            <td>
+                <input type="password" id="confirmarSenha">
+            </td>
+            <td>
+                <p>(max. 8 caracteres)</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3" class="button">
+                <div>
+                    <input type="submit" value="entrar" id="entrar">
+                    <input type="button" value="limpar" id="limpar">
+                </div>
+            </td>
+        </tr>
+
+    </table>
+
 </body>
+
 </html>

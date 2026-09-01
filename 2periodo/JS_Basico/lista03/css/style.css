@@ -8,7 +8,7 @@ body{
     width: 100%;
     height: 100%;
     transition: 0.5s;
-    background-color: rgba(133, 161, 255, 0.99);
+    background-color: rgba(32, 44, 83, 0.99);
 }
 header h1, header h3{
     text-align: center;

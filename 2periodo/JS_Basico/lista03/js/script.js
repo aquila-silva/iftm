@@ -17,6 +17,7 @@ link5.addEventListener("mouseenter", function (){mudaCor(5)});
 link6.addEventListener("mouseenter", function (){mudaCor(6)});
 link7.addEventListener("mouseenter", function (){mudaCor(7)});
 
+
 function mudaCor(cont){
 
     if(cont == 1){
@@ -33,7 +34,7 @@ function mudaCor(cont){
 
     }else if(cont == 4){
 
-        verde();
+        verde(); 
 
     }else if(cont == 5){
         

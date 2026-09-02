@@ -9,7 +9,7 @@ function exibir(){
     n1 = parseFloat(nota1.value);
     n2 =  parseFloat(nota2.value);
 
-    if((n1+n2) >= 60){
+    if((n1+n2) >= 60 || n1 >= 60 || n2 >= 60){
         alert("Aluno aprovado!");
     }else{
         alert("Aluno reprovado!");

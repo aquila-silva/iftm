@@ -1,0 +1,16 @@
+package OperacoesAritimeticas;
+
+public class Adicao{
+
+    public int a, b;
+
+    public Adicao(int x, int y){
+
+        a = x;
+        b = y;
+    }
+
+    public int soma(){
+        return a+b;
+    }
+}

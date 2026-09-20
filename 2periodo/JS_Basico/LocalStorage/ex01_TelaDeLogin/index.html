@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <meta name="author" content="Aquila Fernando Alves Silva">
+    <title>Entre ou Cadastre-se</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="login">
+            <h2>Bem - Vindo</h2>
+            <form action="">
+                <label for="">Login: </label>
+                <input type="text" required id="username">
+                <label for="">Senha: </label>
+                <input type="password" required id="userPass">
+                <input type="button" value="Cadastrar" id="btnCadastro">
+                <p id="confirm"></p>
+            </form>
+        </div>
+
+        <div class="login">
+            <h2>Entrar</h2>
+            <form action="">
+                <label for="">Login: </label>
+                <input type="text" required id="userLogin">
+                <label for="">Senha: </label>
+                <input type="password" required id="userPassLogin">
+                <input type="button" value="Entrar" id="btnLogin">
+                <p id="confirmLogin"></p>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="lista">
+        <h2>Lista de Usuarios Cadastrados:</h2>
+        <div>
+            <ol id="uList"></ol>
+        </div>
+        
+    </div>
+
+
+</body>
+</html>

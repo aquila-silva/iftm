@@ -12,11 +12,12 @@ btnCadastro.addEventListener("click", function (){
 /*função que cadastra usuarios */
 function cadastrar_usuario(){
 
-
+    //variavel que verifica conteúdo do Local Storage
     let dadosLocal = localStorage.getItem("usuarios");
 
     let listaDeUsuarios;
-    //* verifica se já tem usuarios cadastrados
+
+    //* Condição que verifica se já tem usuarios cadastrados
     // e retorna um array vazio se não houver*//
     if(dadosLocal === null){
         listaDeUsuarios = [];
@@ -24,6 +25,7 @@ function cadastrar_usuario(){
         listaDeUsuarios = JSON.parse(dadosLocal);
     }
 
+    //Variaveis que guardam o usuario e senha digitados
     let name = username.value;
     let pass = userPass.value;
 
@@ -35,18 +37,25 @@ function cadastrar_usuario(){
         return;
         /*Se algum campo estiver vazio a função é interrompida
         e exibe mensagem de erro */
+
     }else{
         if(listaDeUsuarios.length<=0){
+            //tratamento de condição caso este seja o primeiro usuario cadastrado
             validaMsg.innerHTML= "Cadastro realizado com sucesso!";
             validaMsg.style.color = "Green";
             listaDeUsuarios.push(usr)
             
         }else{
+            //variavel boolean que verifica se já existe o mesmo usuario cadastrado//
             let duplicado = false;
-
+            
+            //loop que percorre todos os usuarios já cadastrados
             for(i = 0; i<listaDeUsuarios.length; i++){
+                
                 if(duplicado == true){
                     break;
+                    //caso o usuario com mesmo nome seja econtrado o loop é interrompido
+                    // e a variavel boolean se torna verdadeira*/
                 }else{
                     if(listaDeUsuarios[i].name == name)
                         duplicado = true;
@@ -54,10 +63,11 @@ function cadastrar_usuario(){
                     
             }
 
+            //se duplicado for verdadeiro o cadastro não é realizado
             if(duplicado == true){
                 validaMsg.innerHTML= "Cadastro não realizado!<br>Usuario já cadastrado";
                 validaMsg.style.color = "Red";
-
+                return;
             }else{
                 validaMsg.innerHTML= "Cadastro realizado com sucesso!";
                 validaMsg.style.color = "Green";
@@ -75,6 +85,8 @@ function cadastrar_usuario(){
 
 }
 
+
+//variavems que captam elementos do card de login no HTML
 const nameLogin = document.getElementById("userLogin");
 const passLogin = document.getElementById("userPassLogin");
 const btnLogin = document.getElementById("btnLogin");
@@ -86,6 +98,7 @@ btnLogin.addEventListener("click", function (){
 
 function login(){
 
+    //variaveis que guaram nome e senha do usuario
     let name = nameLogin.value;
     let pass = passLogin.value;
 
@@ -128,14 +141,18 @@ function login(){
 }
 
 const list = document.getElementById("uList");
+const btnLimpar = document.getElementById("btnLimpar");
 
 attLista();
+btnLimpar.addEventListener("click", limpar);
+
 
 function attLista(){
     let dadosLocal = localStorage.getItem("usuarios");
-    if(dadosLocal === null)
+    if(dadosLocal === null){
+        list.innerHTML = "";
         return;
-    else{
+    }else{
         let listaDeUsuarios = JSON.parse(dadosLocal);
 
         list.innerHTML = "";
@@ -145,4 +162,15 @@ function attLista(){
         }
     }
 
+}
+
+function limpar(){
+    dadosLista = localStorage.getItem("usuarios");
+    if(dadosLista === null){
+        return;
+    }else{
+        let vazio = "";
+        localStorage.removeItem("usuarios");
+        attLista();
+    }
 }

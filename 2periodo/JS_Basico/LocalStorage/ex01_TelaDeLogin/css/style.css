@@ -4,10 +4,11 @@
   box-sizing: border-box;
 }
 :root{
-    --color: rgb(138, 170, 129);
+    --color: linear-gradient(90deg, #7ea342, #ffff);
+    --reverse-color: linear-gradient(360deg, #f2fcd7, #ffff);
 }
 body {
-  background-color: var(--color);
+  background: var(--color);
 }
 .container{
   display: flex;
@@ -16,12 +17,30 @@ body {
   width: 550px;
   margin: auto;
 }
-.login, .lista {
+.login,.cadastro{
 
   display: flex;
   margin: auto;
   flex-direction: column;
   width: 250px;
+  height: 260px;
+  align-items: center;
+  justify-content: center;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 8px;
+  padding: 20px;
+  background: var(--reverse-color);
+  margin-top: 20px;
+ 
+}
+.lista{
+
+  display: flex;
+  margin: auto;
+  flex-direction: column;
+  width: 350px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.466);
@@ -43,7 +62,13 @@ form {
   flex-direction: column;
 }
 input {
-  margin: 10px 0px; 
+  margin: 5px 0px; 
+}
+input[type="text"], input[type="password"]{
+  font-size: 16px;
+}
+label{
+  font-size: 12px;
 }
 input[type="button"] {
   border: none;
@@ -58,14 +83,25 @@ input[type="button"] {
 input[type="button"]:hover {
   background-color: rgb(26, 66, 2);
 }
+.lista h2{
+  text-align: center;
+}
 .lista div{
   display: block;
+  margin-top: 5px;
   min-height: 50px;
   width: 100%; 
   border: 1px solid rgba(0, 0, 0, 0.486);
   border-radius: 5px;
   box-shadow: 0px 0px 2px 0px ;
   
+}
+
+.btnLimpar{
+  width: 120px !important;
+}
+.btnLimpar:hover{
+  background-color: red!important;
 }
 
 ol li{

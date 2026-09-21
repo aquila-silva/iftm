@@ -1,112 +1,266 @@
 * {
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
 }
-:root{
-    --color: linear-gradient(90deg, #7ea342, #ffff);
-    --reverse-color: linear-gradient(360deg, #f2fcd7, #ffff);
-}
-body {
-  background: var(--color);
-}
-.container{
-  display: flex;
-  flex-direction: row;
-  gap: 10px;
-  width: 550px;
-  margin: auto;
-}
-.login,.cadastro{
 
+:root {
+  --color: rgb(229, 248, 185);
+  --reverse-color: linear-gradient(360deg, #f2fcd7, #ffffff);
+  --border-radius-padrao: 5px; /* Mantido conforme solicitado */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color);
+  background-image: url(../img/gatinhos.png);
+  background-size: 300px;
+  min-height: 100vh;
+  padding: 20px;
   display: flex;
-  margin: auto;
   flex-direction: column;
-  width: 250px;
-  height: 260px;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ==========================================================================
+   SIDE NAV (Painel Lateral / Topo no Mobile)
+   ========================================================================== */
+.sideNav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: var(--border-radius-padrao);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  background-color: white;
+  text-align: center;
+}
+
+.sideNav img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  margin: 15px 0;
+}
+
+/* ==========================================================================
+   CONTAINER PRINCIPAL (Login e Cadastro lado a lado / Empilhado no Mobile)
+   ========================================================================== */
+.container {
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column; /* Empilha no mobile por padrão */
+  gap: 20px;
+}
+
+.login, .cadastro {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 320px;
   align-items: center;
   justify-content: center;
   border-top: 2px solid white;
   border-left: 2px solid white;
-  border-radius: 5px;
-  box-shadow: 5px 5px 8px;
-  padding: 20px;
+  border-radius: var(--border-radius-padrao);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 25px;
   background: var(--reverse-color);
-  margin-top: 20px;
- 
 }
-.lista{
 
-  display: flex;
-  margin: auto;
-  flex-direction: column;
-  width: 350px;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(0, 0, 0, 0.466);
-  border-radius: 5px;
-  box-shadow: 5px 5px 8px;
-  padding: 20px;
-  background-color: white;
-  margin-top: 20px;
+.login h2, .cadastro h2 {
+  margin-bottom: 15px;
 }
-p{
-  height: 18px;
-  display: inline-block;
-  font-size: 10px;
-  text-align: center;
-  padding: 5px;
-}
+
+/* ==========================================================================
+   FORMULÁRIOS & ELEMENTOS DE TEXTO
+   ========================================================================== */
 form {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
-input {
-  margin: 5px 0px; 
+
+label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 10px;
+  text-align: left;
 }
-input[type="text"], input[type="password"]{
+
+p {
+  font-size: 14px;
+  text-align: center;
+  padding: 5px;
+  word-break: break-word;
+}
+
+input[type="text"], 
+input[type="password"] {
   font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius-padrao);
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
 }
-label{
-  font-size: 12px;
+
+input[type="text"]:focus, 
+input[type="password"]:focus {
+  border-color: #7da112;
 }
+
+/* Botões Gerais */
 input[type="button"] {
+  display: block;
   border: none;
   color: white;
   background-color: black;
-  padding: 5px;
-  width: 80px;
-  margin: auto;
-  border-radius: 5px;
+  padding: 10px 15px;
+  min-width: 100px;
+  margin: 15px auto 5px auto;
+  border-radius: var(--border-radius-padrao);
   cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color 0.2s;
 }
+
 input[type="button"]:hover {
-  background-color: rgb(26, 66, 2);
-}
-.lista h2{
-  text-align: center;
-}
-.lista div{
-  display: block;
-  margin-top: 5px;
-  min-height: 50px;
-  width: 100%; 
-  border: 1px solid rgba(0, 0, 0, 0.486);
-  border-radius: 5px;
-  box-shadow: 0px 0px 2px 0px ;
-  
+  background-color: rgb(31, 85, 0);
 }
 
-.btnLimpar{
-  width: 120px !important;
-}
-.btnLimpar:hover{
-  background-color: red!important;
-}
-
-ol li{
-  display: inline-block;
+/* ==========================================================================
+   LISTA DE USUÁRIOS
+   ========================================================================== */
+.sideNav > div {
+  margin-top: 30px;
   width: 100%;
-  padding: 5px;
+}
+
+.sideNav h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Container da lista limpa */
+div > div > div {
+  display: block;
+  margin-top: 15px;
+  min-height: 80px;
+  max-height: 200px;
+  overflow-y: auto; /* Adiciona scroll se a lista crescer demais */
+  width: 100%; 
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: var(--border-radius-padrao);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+  background: #fafafa;
+}
+
+ol {
+  padding: 10px 20px;
+  text-align: left;
+}
+
+ol li {
+  padding: 6px 0;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
   word-wrap: break-word;
+}
+
+ol li:last-child {
+  border-bottom: none;
+}
+
+/* Classes específicas de botões */
+.btnLimpar {
+  width: 140px !important;
+}
+
+.btnLimpar:hover, .btnSair:hover {
+  background-color: rgb(168, 40, 40) !important;
+}
+
+.btnIcon {
+  margin-top: 15px !important;
+}
+
+/* ==========================================================================
+   MODAL DE SELEÇÃO DE ÍCONES (Gatinhos)
+   ========================================================================== */
+.selecionaIcon {
+  display: none; /* Controlado pelo JS */
+  gap: 15px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Centraliza perfeitamente na tela */
+  flex-direction: column;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: var(--border-radius-padrao);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  background-color: white;
+  z-index: 1000;
+}
+
+.selecionaIcon > div {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.selecionaIcon img {
+  width: calc(50% - 8px); /* Garante que fiquem dois por linha perfeitamente */
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--border-radius-padrao);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.selecionaIcon img:hover {
+  background-color: yellow;
+  border-color: #7da112;
+  transform: scale(1.03);
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (A mágica da responsividade de respeito)
+   ========================================================================== */
+
+/* Telas médias e grandes (Tablets e Desktops) */
+@media (min-width: 768px) {
+  body {
+    flex-direction: row; /* Coloca o Menu Lateral ao lado do Bloco Principal */
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .container {
+    flex-direction: row; /* Alinha Login e Cadastro lado a lado */
+    max-width: 520px;
+    flex-wrap: wrap; /* Se a tela for muito pequena na altura, eles quebram linha */
+  }
+
+  .login, .cadastro {
+    width: calc(50% - 10px); /* Divide o espaço igualmente */
+    height: 360px;
+  }
 }

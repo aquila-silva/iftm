@@ -9,10 +9,35 @@
     <title>Entre ou Cadastre-se</title>
 </head>
 <body>
+    <div class="sideNav">
+        <h2 id="tituloLogin"></h2>
+
+        <img src="img/gatinhodefault.webp" id="icon">
+
+        <p id="textoLogin"></p>
+
+        <input type="" id="btnIcon" class="btnIcon">
+        <p id="textIcon"></p>
+        <input type="" id="btnSair" class="btnSair">
+
+        <div>
+            <h2>Lista de Usuarios Cadastrados:</h2>
+            <input type="button" value="Limpar Cadastros" id="btnLimpar" class="btnLimpar">
+            
+            <div>
+                <ol id="uList"></ol>
+            </div>
+        </div>
+        
+    </div>
+
+
+    </nav>
     <div class="container">
 
         <div class="cadastro">
-            <h2>Bem - Vindo</h2>
+            <p>Ainda não possui uma conta?</p>
+            <h2>Cadastre-se</h2>
             <form action="">
                 <label for="">Login: </label>
                 <input type="text" required id="username">
@@ -24,6 +49,7 @@
         </div>
 
         <div class="login">
+            <p>Já é cadastrado?</p>
             <h2>Entrar</h2>
             <form action="">
                 <label for="">Login: </label>
@@ -37,13 +63,20 @@
 
     </div>
 
-    <div class="lista">
-        <h2>Lista de Usuarios Cadastrados:</h2>
-        <input type="button" value="Limpar Cadastros" id="btnLimpar" class="btnLimpar">
+    <div class="selecionaIcon" id="selecionaIcon">
+        <h2>Escolha um Gatinho!</h2>
+        <p>Selecione uma imagem de gatinho para ser seu icone de avatar.</p>
         <div>
-            <ol id="uList"></ol>
+            <img src="img/gatinho1.webp" alt="" id="icon0">
+            <img src="img/gatinho2.webp" alt="" id="icon1">
         </div>
-        
+
+        <div>
+            <img src="img/gatinho3.webp" alt="" id="icon2">
+            <img src="img/gatinho4.webp" alt="" id="icon3">
+        </div>
+
+        <input type="button" value="Confirmar" id="btnConfirmIcon">
     </div>
 
 

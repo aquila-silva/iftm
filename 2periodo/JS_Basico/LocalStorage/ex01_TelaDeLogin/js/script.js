@@ -176,7 +176,8 @@ btnLimpar.addEventListener("click", limpar);
 
 
 function attLista(){
-    let dadosLocal = localStorage.getItem("usuarios");
+    dadosLocal = localStorage.getItem("usuarios");
+    
     if(dadosLocal === null){
         list.innerHTML = "";
         return;
@@ -220,7 +221,7 @@ btnCadastro.addEventListener("click", function (){
 function cadastrar_usuario(){
 
     //variavel que verifica conteúdo do Local Storage
-    let dadosLocal = localStorage.getItem("usuarios");
+    dadosLocal = localStorage.getItem("usuarios");
 
     let listaDeUsuarios;
 
@@ -317,7 +318,7 @@ function login(){
         return;
 
     }else{
-        let dadosLocal = localStorage.getItem("usuarios");
+        dadosLocal = localStorage.getItem("usuarios");
 
         if(dadosLocal === null){
 

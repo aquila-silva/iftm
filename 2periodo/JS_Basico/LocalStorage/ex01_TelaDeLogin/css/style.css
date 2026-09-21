@@ -168,14 +168,14 @@ ol {
   text-align: left;
 }
 
-ol li {
+ul li {
   padding: 6px 0;
   font-size: 15px;
   border-bottom: 1px solid #eee;
   word-wrap: break-word;
 }
 
-ol li:last-child {
+ul li:last-child {
   border-bottom: none;
 }
 
@@ -214,6 +214,7 @@ ol li:last-child {
   padding: 25px;
   background-color: white;
   z-index: 1000;
+  text-align: center;
 }
 
 .selecionaIcon > div {

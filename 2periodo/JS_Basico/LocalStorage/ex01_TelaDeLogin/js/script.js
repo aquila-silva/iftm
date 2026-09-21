@@ -136,6 +136,7 @@ function confirmIcon(){
     }
 
     localStorage.setItem("usuarios", JSON.stringify(dadosLocal));
+    localStorage.setItem("usuarioLogado", JSON.stringify(usuarioAtual));
     exibeIcon();
     selecionaIcon.style.display = "none";
 }

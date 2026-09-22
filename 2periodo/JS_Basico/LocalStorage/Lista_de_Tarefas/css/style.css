@@ -5,12 +5,12 @@
 }
 
 :root {
-    --amarelo-base: rgb(255, 246, 145);
-    --secundaria-base: rgb(7, 79, 173);
+    --primario-base: rgb(187, 239, 255);
+    --secundaria-base: rgb(93, 34, 176);
 }
 
 body {
-    background-color: var(--amarelo-base);
+    background-color: var(--primario-base);
     height: 100vh;
     position: relative;
 }
@@ -101,7 +101,7 @@ p{
     text-align: center;
 }
 .cadastro input[type="button"]{
-    background-color: var(--amarelo-base);
+    background-color: var(--primario-base);
     color: var(--secundaria-base);
     font-weight: bold;
     font-size: 16px;
@@ -109,7 +109,7 @@ p{
 
 .login input[type="button"]{
     background-color: var(--secundaria-base);
-    color: var(--amarelo-base);
+    color: var(--primario-base);
     font-weight: bold;
     font-size: 16px;
 }
@@ -123,7 +123,7 @@ p{
 input{
     padding: 10px;
     border: 1px solid var(--secundaria-base);
-    background-color: var(--amarelo-base);
+    background-color: var(--primario-base);
     border-radius: 5px;
 }
 
@@ -137,10 +137,11 @@ nav ul{
 }
 nav a:link, nav a:visited {
     display: block;
-    padding: 10px;
-    color: var(--amarelo-base);
+    padding: 10px 55px;
+    color: var(--primario-base);
     text-decoration: none;
     font-weight: bold;
+    font-size: 16px;
 }
 nav li:last-child{
     position: absolute;
@@ -153,6 +154,7 @@ section{
     background-color: white;
     padding: 20px;
 }
+
 section h2{
     text-align: center;
     color: var(--secundaria-base);

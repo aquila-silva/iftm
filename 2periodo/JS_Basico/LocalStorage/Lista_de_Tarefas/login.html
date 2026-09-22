@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/ControleAcesso.js" defer></script>
+    <script src="js/VisualLoginCards.js" defer></script>
+    <script src="js/CadastrarUsuario.js" defer></script>
+    <script src="js/Login.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- CONTAINER CENTRAL DA TELA -->
+    <div class="container-central">
+        
+        <!-- ABAS FIXAS NO TOPO -->
+        <div class="abas">
+            <h3 id="hLogin" class="aba-login">Entrar</h3>
+            <h3 id="hCadastro" class="aba-cadastro">Cadastre - se</h3>
+        </div>
+
+        <!-- CARD DE CADASTRO -->
+        <div class="cadastro" id="cadastro">
+            <div class="form" id="cadastroForm">
+                <form>
+                    <div>
+                        <label for="usuarioCadastro">Usuario: </label>
+                        <input type="text" name="usuarioCadastro" id="usuarioCadastro">
+                    </div>
+                    <div>
+                        <label for="senhaCadastro">Senha: </label>
+                        <input type="password" name="senhaCadastro" id="senhaCadastro">
+                    </div>
+                    <div>
+                        <input type="button" value="Cadastrar" id="btnCadastro">
+                    </div>
+                    <p id="txtCadastro"></p>
+                </form>
+            </div>
+        </div>
+
+        <!-- CARD DE LOGIN -->
+        <div class="login" id="login">
+            <div class="form" id="loginForm">
+                <form>
+                    <div>
+                        <label for="usuarioLogin">Usuario: </label>
+
+                        <input type="text" name="usuarioLogin" id="usuarioLogin">
+                    </div>
+                    <div>
+                        <label for="senhaLogin">Senha: </label>
+
+                        <input type="password" name="senhaLogin" id="senhaLogin">
+                    </div>
+                    <div>
+                        <input type="button" value="Entrar" id="btnEntrar">
+                        <p id="txtLogin"></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

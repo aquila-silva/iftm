@@ -1,5 +1,3 @@
-const acessoLogin = document.getElementById("acessoLogin");
-const acessoHome = document.getElementById("acessoHome");
 
 const paginaAtual = window.location.pathname;
 
@@ -15,8 +13,11 @@ function redirecionaPagina(){
             window.location.href = "login.html";
 
     }else{
-        if(paginaAtual.includes("login.html"))
-            window.location.href = "index.html";
+      
+            if(paginaAtual.includes("login.html"))
+                window.location.href = "index.html";
+  
+        
     }
    
 }

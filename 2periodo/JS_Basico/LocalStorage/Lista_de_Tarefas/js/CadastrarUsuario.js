@@ -6,6 +6,17 @@ const btnCadastrar = document.getElementById("btnCadastro");
 
 btnCadastrar.addEventListener("click", cadastrarUsuario);
 
+userPass.addEventListener("keydown", function(event){
+    if(event.key == "Enter"){
+        cadastrarUsuario();
+    }
+});
+
+userName.addEventListener("keydown", function(event){
+    if(event.key == "Enter"){
+        logarUsuario();
+    }
+});
 
 function cadastrarUsuario(){
     newUser = userName.value;

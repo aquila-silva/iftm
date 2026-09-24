@@ -9,9 +9,12 @@ function redirecionaPagina(){
 
     if(usuarioLogado === null){
 
-        if(paginaAtual.includes("index.html"))
+        if(paginaAtual.includes("index.html") || paginaAtual === "/"){
             window.location.href = "login.html";
-
+        }else if(paginaAtual.includes("login.html")){
+            return;
+        }
+        
     }else{
       
             if(paginaAtual.includes("login.html"))

@@ -6,6 +6,18 @@ const btnEntrar = document.getElementById("btnEntrar");
 
 btnEntrar.addEventListener("click", logarUsuario);
 
+userPassLogin.addEventListener("keydown", function(event){
+    if(event.key == "Enter"){
+        logarUsuario();
+    }
+});
+
+userNameLogin.addEventListener("keydown", function(event){
+    if(event.key == "Enter"){
+        logarUsuario();
+    }
+});
+
 function logarUsuario(){
 
     userLogin = userNameLogin.value;

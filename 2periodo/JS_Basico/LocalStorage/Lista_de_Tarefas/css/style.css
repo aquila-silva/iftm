@@ -5,8 +5,8 @@
 }
 
 :root {
-    --primario-base: rgb(187, 239, 255);
-    --secundaria-base: rgb(93, 34, 176);
+    --primario-base: rgb(193, 255, 253);
+    --secundaria-base: rgb(56, 19, 108);
 }
 
 body {
@@ -130,29 +130,55 @@ input{
 /*-------------------------INDEX.HMTL----------------------*/
 
 nav ul{
+    position: fixed;
+    min-width: 100%;
     list-style: none;
     display: flex;
     flex-direction: row;
-    background-color: var(--secundaria-base);
+    background: linear-gradient(to bottom, var(--secundaria-base), rgba(0,0,0,0) 100%);
 }
 nav a:link, nav a:visited {
     display: block;
-    padding: 10px 55px;
-    color: var(--primario-base);
+    padding: 10px 15px;
+    margin: 5px 15px;
+    color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.503);
+    border-radius: 5px;
+}
+
+nav a:hover{
+    background-color: rgba(255, 0, 0, 0.349);
 }
 nav li:last-child{
     position: absolute;
     right: 10px;
 }
 
+footer > div {
+    background: linear-gradient(to top, var(--secundaria-base), rgba(0,0,0,0) 100%);
+    display: flex;
+    height: 90px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+}
+footer p{
+    font-size: 10px;
+    display: block;
+    margin: 0;
+    color: var(--primario-base);
+}
+
 section{
-    width: 85%;
     margin: auto;
-    background-color: white;
     padding: 20px;
+    min-height: 150px;
 }
 
 section h2{

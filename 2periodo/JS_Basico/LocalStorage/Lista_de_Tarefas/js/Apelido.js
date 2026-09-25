@@ -55,7 +55,7 @@ function alterarApelido(){
 
     apelido = prompt("Como gostaria de ser chamado?");
     if(apelido == "" || apelido == null){
-        if(confirm("Não deseja personalizar seu apelido?")){
+        if(confirm("Deseja CANCELAR a personalização do seu apelido?")){
             return;
         }else{
             apelido = prompt("Como gostaria de ser chamado?");
@@ -78,7 +78,24 @@ function alterarApelido(){
             hBV.innerHTML = `Que bom ver você de volta<br>${usuariologado.apelido}`;
 
             carregaApelido();
+        }
+    }else{
+        usuarioAtual.apelido = apelido;
+            
+            
+        usuariosTotal = JSON.parse(localStorage.getItem("usuariosLDT"));
+
+        for(let i = 0; i < usuariosTotal.length; i++){
+            if(usuariosTotal[i].name == usuarioAtual.name){
+                usuariosTotal[i].apelido = usuarioAtual.apelido
+            }
+        }
+        localStorage.setItem("usuariosLDT", JSON.stringify(usuariosTotal));
+        localStorage.setItem("usuarioLogadoLDT", JSON.stringify(usuarioAtual));
+        hBV.innerHTML = `Que bom ver você de volta<br>${usuariologado.apelido}`;
+
+        carregaApelido();
+
     }
     
-    }
 }

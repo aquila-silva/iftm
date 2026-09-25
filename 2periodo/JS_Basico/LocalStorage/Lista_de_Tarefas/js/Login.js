@@ -43,7 +43,7 @@ function logarUsuario(){
             for(let i = 0; i<dadosLocal.length; i++){
                 
                 if(dadosLocal[i].name == usuarioLogado.name && dadosLocal[i].pass == usuarioLogado.pass ){
-                    
+                    usuarioLogado = dadosLocal[i];
                     resultadoLogin = true;
                     break; 
                 }

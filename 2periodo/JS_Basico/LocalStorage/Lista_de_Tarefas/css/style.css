@@ -5,7 +5,7 @@
 }
 
 :root {
-    --primario-base: rgb(232, 239, 247);
+    --primario-base: rgb(225, 239, 255);
     --secundaria-base: rgb(51, 28, 83);
 }
 
@@ -125,6 +125,7 @@ input{
     border: 1px solid var(--secundaria-base);
     background-color: var(--primario-base);
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 /*-------------------------INDEX.HMTL----------------------*/
@@ -147,6 +148,7 @@ nav a:link, nav a:visited {
     font-size: 16px;
     border: 1px solid rgba(255, 255, 255, 0.503);
     border-radius: 5px;
+    transition: 0.3s;
 }
 
 nav a:hover{
@@ -185,6 +187,11 @@ section h2{
     text-align: center;
     color: var(--secundaria-base);
 }
+.cadastrarTarefa > div{
+    border: 1px solid rgb(255, 249, 249);
+    border-radius: 10px;
+    background: linear-gradient(to bottom, rgb(234, 221, 255) 1%, rgb(208, 219, 255) 100%);;
+}
 
 h1{
     text-align: center;
@@ -203,14 +210,38 @@ h1{
 .btnApelido:hover, .btnCadastrarTAF:hover{
     background-color: blueviolet;
 }
+.apresentacao b{
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.apresentacao{
+    background: linear-gradient(to top,var(--primario-base) -20%, white 100%);
+}
 .tafCadastrada{
     flex-direction: column;
 }
 .tafCadastrada input{ 
-    background-color: brown;
+    background-color: rgb(145, 12, 12);
     color: white;
     font-weight: bold;
+    margin-bottom: 15px;
 }
 .tafCadastrada input:hover{
     background-color: red;
+}
+.tafCadastrada li{
+    border: 1px solid var(--secundaria-base);
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 20px 0px;
+}
+.tafCadastrada ul{
+    list-style: none;
+}
+.tafCadastrada li:nth-last-of-type(odd){
+    background: linear-gradient(to top, rgb(234, 234, 255) 0, white 100%);
+}
+.tafCadastrada li:nth-last-of-type(even){
+    background: linear-gradient(to bottom, rgb(255, 235, 234) 0, white 100%);
 }

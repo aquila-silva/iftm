@@ -216,7 +216,7 @@ h1{
 }
 
 .apresentacao{
-    background: linear-gradient(to top,var(--primario-base) -20%, white 100%);
+    background: linear-gradient(to top,var(--primario-base) -20%           , white 100%);
 }
 .tafCadastrada{
     flex-direction: column;

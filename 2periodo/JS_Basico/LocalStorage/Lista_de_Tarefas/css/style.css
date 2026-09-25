@@ -234,7 +234,7 @@ h1{
 .tafCadastrada li{
     border: 1px solid rgba(0, 0, 0, 0.264);
     border-radius: 10px;
-    margin-top: 5px;
+    margin: 15px 0px;
     padding: 20px 5px;
 }
 .tafCadastrada ul{
@@ -245,4 +245,9 @@ h1{
 }
 .tafCadastrada li:nth-last-of-type(even){
     background: linear-gradient(to bottom, rgb(255, 235, 234) 0, white 100%);
+}
+.cadastrarTarefa select{
+    background-color: var(--primario-base);
+    padding: 10px;
+    border-radius: 5px;
 }

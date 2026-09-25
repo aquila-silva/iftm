@@ -26,18 +26,53 @@
     <main>
         <section class="apresentacao">
             <h1 id="hBoasVindas"></h1>
+            <input type="button" value="Trocar Apelido" id="btnApelido" class="btnApelido">
         </section>
         <section>
             
             <h2>Cadastrar Tarefa</h2>
             <div>
-
+                <form>
+                    <div>
+                        <label>Nome da tarefa:</label>
+                        <input type="text" id="nomeTAF">
+                    </div>
+                    <div>
+                        <label>
+                            Prazo estipulado para conclusão: 
+                            <details>
+                                <summary>(?)</summary>
+                                <p style="font-size: 12px;">Determine uma data especifica em que você se compromete em finalizar a tarefa.</p>
+                            </details>
+                        </label>
+                        <input type="date" id="prazo">
+                    </div>
+                    <div>
+                        <label for="prioridade">Nível de Prioridade:</label>
+                        <select name="prioridade" id="prioridade">
+                            <option value="" disabled selected>Selecione um nível</option>
+                            <option value="Alta">Alta</option>
+                            <option value="Moderada">Moderada</option>
+                            <option value="Baixa">Baixa</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p id="txtConCadastro"></p>
+                        <input type="button" value="Cadastrar Tarefa" id="BtnCadastrarTAF" class="btnCadastrarTAF">
+                    </div>
+                </form>
             </div>
         </section>
         <section>
-            <h2>Tarefas Cadastradas</h2>
-            <div>
+            <h2>Lista de Tarefas</h2>
+            <div id="tafVazia">
+                <p>Nenhuma tarefa cadastrada por enquanto</p>
+            </div>
+            <div id="tafCadastrada" class="tafCadastrada">
+                <input type="button" value="Limpar Lista">
+                <ul id="listaTAF">
 
+                </ul>
             </div>
         </section>
     </main>

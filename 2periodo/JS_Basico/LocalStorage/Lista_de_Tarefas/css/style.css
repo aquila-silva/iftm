@@ -231,10 +231,10 @@ h1{
     background-color: red;
 }
 .tafCadastrada li{
-    border: 1px solid var(--secundaria-base);
+    border: 1px solid rgba(0, 0, 0, 0.264);
     border-radius: 10px;
     margin-top: 5px;
-    padding: 20px 0px;
+    padding: 20px 5px;
 }
 .tafCadastrada ul{
     list-style: none;

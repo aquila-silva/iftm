@@ -159,12 +159,7 @@ nav li:last-child{
     right: 10px;
 }
 
-footer{
-    position: fixed;
-    width: 100%;
-    height: max-content;
-    bottom: 0px;
-}
+
 footer > div {
     background: linear-gradient(to top, var(--secundaria-base), rgba(0,0,0,0) 100%);
     display: flex;
@@ -251,6 +246,9 @@ h1{
 }
 .tafCadastrada li:nth-last-of-type(even){
     background: linear-gradient(to bottom, rgb(255, 235, 234) 0, white 100%);
+}
+.tafCadastrada li:nth-last-of-type(last){
+    margin-bottom: 90px;
 }
 .cadastrarTarefa select{
     background-color: var(--primario-base);

@@ -159,6 +159,12 @@ nav li:last-child{
     right: 10px;
 }
 
+footer{
+    position: fixed;
+    width: 100%;
+    height: max-content;
+    bottom: 0px;
+}
 footer > div {
     background: linear-gradient(to top, var(--secundaria-base), rgba(0,0,0,0) 100%);
     display: flex;

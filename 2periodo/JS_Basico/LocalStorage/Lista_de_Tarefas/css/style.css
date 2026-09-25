@@ -181,6 +181,7 @@ section{
     margin: auto;
     padding: 20px;
     min-height: 150px;
+    max-width: 900px;
 }
 
 section h2{

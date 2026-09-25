@@ -18,6 +18,8 @@ function excluirCadastro(){
            
         }
 
+        
+
         localStorage.setItem("usuariosLDT", JSON.stringify(usuariosTotalFiltrado));
 
         alert("Cadastro excluído com sucesso!");

@@ -65,6 +65,7 @@ function alterarApelido(){
             }else{
                 usuarioAtual.apelido = apelido;
             }
+            
             usuariosTotal = JSON.parse(localStorage.getItem("usuariosLDT"));
 
             for(let i = 0; i < usuariosTotal.length; i++){

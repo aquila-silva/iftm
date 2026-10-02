@@ -21,7 +21,7 @@ function entrar(){
     }
 }
  
-const hMenu = document.getElementById("hMenu");
+
 const btnMenu = document.getElementById("btnConvidado");
 
 exibeMenu();
@@ -37,7 +37,12 @@ function exibeMenu(){
         window.location.href = "index.html";
     }else{
         usuarioAtual = JSON.parse(usuarioAtual);
+<<<<<<< Updated upstream
         hMenu.innerHTML = usuarioAtual + ", seja - bem-vindo ao jogo dos Felinos";
+=======
+        if(window.location.pathname.includes("menu.html"))
+            document.getElementById("hMenu").innerHTML = usuarioAtual + ", seja - bem-vindo ao jogo dos Felinos";
+>>>>>>> Stashed changes
     }
 
 }

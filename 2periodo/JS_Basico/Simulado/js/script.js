@@ -50,3 +50,11 @@ function menu(){
 
 }
 
+if(window.location.pathname.includes("felino.html")){
+    usuarioLogado = JSON.parse(localStorage.getItem("usuarioLogado"));
+    vetUser = usuarioLogado.split(" ");
+    document.getElementById("img1").addEventListener("click", function () {
+        alert("Oi " + vetUser[0] + ", tudo bem com você?");
+    })
+}
+

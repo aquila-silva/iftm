@@ -60,4 +60,5 @@ h1{
 .containerFelinos img{
 
     width: 100px;
+    cursor: pointer;
 }

@@ -24,9 +24,9 @@ function entrar(){
 
 const btnMenu = document.getElementById("btnConvidado");
 
-exibeMenu();
+menu();
 
-function exibeMenu(){
+function menu(){
 
     if(window.location.pathname.includes("index.html"))
             return;
@@ -37,16 +37,16 @@ function exibeMenu(){
         window.location.href = "index.html";
     }else{
         usuarioAtual = JSON.parse(usuarioAtual);
-<<<<<<< Updated upstream
-        hMenu.innerHTML = usuarioAtual + ", seja - bem-vindo ao jogo dos Felinos";
-=======
-        if(window.location.pathname.includes("menu.html"))
+
+        if(window.location.pathname.includes("menu.html")){
             document.getElementById("hMenu").innerHTML = usuarioAtual + ", seja - bem-vindo ao jogo dos Felinos";
->>>>>>> Stashed changes
+
+            document.getElementById("btnConvidado").addEventListener("click", function (){
+            window.location.href = "felino.html";
+            })
+        }
+
     }
 
 }
 
-document.getElementById("btnConvidado").addEventListener("click", function (){
-    window.location.href = "felino.html";
-})

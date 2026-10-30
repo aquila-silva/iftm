@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorteio</title>
+</head>
+<body>
+
+    <h1>Sorteador de Números</h1>
+
+    <div>
+        <img src="https://via.placeholder.com/300x150" alt="Imagem">
+    </div>
+
+    <br>
+
+    <form action="/sortear" method="get">
+        <button type="submit">Gerar Números</button>
+    </form>
+
+    <br>
+
+    <!-- Exibição usando o objeto resultado criado no Controller -->
+    <div th:if="${resultado != null}">
+        <h2>Números Sorteados:</h2>
+        <p th:text="${resultado.numeros}"></p>
+    </div>
+
+</body>
+</html>

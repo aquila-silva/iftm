@@ -3,8 +3,14 @@ if(window.location.pathname.includes("index.html")){
     const btnEntrar = document.getElementById("btnEntrar");
 
     document.getElementById("forms").style.display = "none";
-    alert("Olá, seja bem-vindo!");
+    document.getElementById("field").style.display = "none";
+    if(confirm("Olá, seja bem-vindo!")){
+        document.getElementById("forms").style.display = "block";
+        document.getElementById("field").style.display = "block";
+    }
+
     document.getElementById("forms").style.display = "block";
+    document.getElementById("field").style.display = "block";
     btnEntrar.addEventListener("click", entrar);
 }
 

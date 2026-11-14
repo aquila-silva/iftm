@@ -51,7 +51,28 @@ function validar(elementoTexto){
     // os colchetes servem para definir intervalos específicos de caracteres [abc] aceita apenas a letra a, b ou c.
     // let padrao = /^[abcd]{2,8}$/;
 
-    let padrao = /^[abcd]{2,8}$/;
+    // o traço - pode ser utilizado para definir um intervalo de caracteres específico como [a-z] ou [0-9]
+    // let padrao = /^[j-z]{2,8}$/;
+
+    // let padrao = /^[^A-z]{2,8}$/
+
+    // expressão de validação de expressão aritimética
+    // let padrao = /^\({0,1}\d{1,},{0,1}\d{0,}\){0,1}[\+\-\*\/]\({0,1}\d{1,},{0,1}\d{0,}\){0,1}([\+\-\*\/]\({0,1}\d{1,},{0,1}\d{0,}\){0,1}){0,}$/;
+     
+    // \D com D maiúsculo define que o caractere não pode ser um número
+    // let padrao = /^\D$/
+
+    // \w com w minúsculo define que apenas serão aceitos caracteres alfanuméricos
+    // let padrao = /^\w{5}$/; 
+
+    // \W com W maiúsculo define que não será aceito nenhum caractere alfanumérico
+    // let padrao = /^\W{5}$/; 
+    
+
+    // {0,1} pode ser melhor escrito apenas pelo sinal de interrogação ?
+    // {0,} pode ser melhor escrito apenas pelo sinal de asterisco *
+    // {1} pode ser melhor escrito apenas pelo sinal de adição +
+    let padrao = /^\d?$/;
     if(padrao.test(texto))
         alert("Válido (OK)");
     else

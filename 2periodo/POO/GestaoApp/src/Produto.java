@@ -7,14 +7,16 @@ public class Produto {
     private static int totalProdutosCadastrados = 0;
 
     public Produto(String nome, int quantidadeInicial, double precoUnitario) {
+        if (nome == null || nome.trim().isEmpty()) {
+            throw new IllegalArgumentException("O nome do produto não pode ser vazio.");
+        }
         this.nome = nome;
-        setQuantidadeEstoque(quantidadeInicial); 
-        setPrecoUnitario(precoUnitario);         
-        this.promocao = false;                   
+        setQuantidadeEstoque(quantidadeInicial);
+        setPrecoUnitario(precoUnitario);
+        this.promocao = false;
         totalProdutosCadastrados++;
     }
 
-    
     public void setQuantidadeEstoque(int quantidadeEstoque) {
         if (quantidadeEstoque < 0) {
             throw new IllegalArgumentException("A quantidade em estoque não pode ser negativa.");
@@ -22,7 +24,6 @@ public class Produto {
         this.quantidadeEstoque = quantidadeEstoque;
     }
 
-    
     public void setPrecoUnitario(double precoUnitario) {
         if (precoUnitario <= 0) {
             throw new IllegalArgumentException("O preço unitário deve ser maior que zero.");
@@ -30,31 +31,10 @@ public class Produto {
         this.precoUnitario = precoUnitario;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getQuantidadeEstoque() {
-        return quantidadeEstoque;
-    }
-
-    public double getPrecoUnitario() {
-        return precoUnitario;
-    }
-
-    public boolean isPromocao() {
-        return promocao;
-    }
-
-    public void setPromocao(boolean promocao) {
-        this.promocao = promocao;
-    }
-
-    public static int getTotalProdutosCadastrados() {
-        return totalProdutosCadastrados;
-    }
+    public String getNome() { return nome; }
+    public int getQuantidadeEstoque() { return quantidadeEstoque; }
+    public double getPrecoUnitario() { return precoUnitario; }
+    public boolean isPromocao() { return promocao; }
+    public void setPromocao(boolean promocao) { this.promocao = promocao; }
+    public static int getTotalProdutosCadastrados() { return totalProdutosCadastrados; }
 }

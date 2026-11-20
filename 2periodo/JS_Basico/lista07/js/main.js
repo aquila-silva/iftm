@@ -17,9 +17,9 @@ document.getElementById("btnValidaDisc1").addEventListener("click", function(){
 });
 
 document.getElementById("btnValidaDisc2").addEventListener("click", function(){
-    validarEntrada.validaDisciplina1("disciplina2", "txtRetorno5");
+    validarEntrada.validaDisciplina2("disciplina2", "txtRetorno5");
 });
 
 document.getElementById("btnValidaDisc3").addEventListener("click", function(){
-    validarEntrada.validaDisciplina1("disciplina3", "txtRetorno6");
+    validarEntrada.validaDisciplina3("disciplina3", "txtRetorno6");
 });

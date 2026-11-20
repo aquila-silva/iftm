@@ -53,7 +53,7 @@ function validaDisciplina1(elementoEntrada, elementoRetorno){
     let entrada = document.getElementById(elementoEntrada);
     let retorno = document.getElementById(elementoRetorno);
 
-    const padrao = /^[Mm][Tt]-\d{2}\.\d{3}-[Ii][Ff][Tt][Mm]$/;
+    const padrao = /^[Mm][Tt]\-\d{2}\.\d{3}\-[Ii][Ff][Tt][Mm]$/;
     if(padrao.test(entrada.value)){
         retorno.innerHTML = "Código válido!";
         retorno.style.color = "Green";
@@ -69,12 +69,12 @@ function validaDisciplina2(elementoEntrada, elementoRetorno){
     let entrada = document.getElementById(elementoEntrada);
     let retorno = document.getElementById(elementoRetorno);
 
-    const padrao = /^MT-\d{2}\.\d{3}-[Ii][Ff][Tt][Mm]$/;
+    const padrao = /^[M][T]\-\d{2}\.\d{3}\-[Ii][Ff][Tt][Mm]$/;
     if(padrao.test(entrada.value)){
         retorno.innerHTML = " válido!";
         retorno.style.color = "Green";
     }else{
-        retorno.innerHTML = "inválido! formato esperado: ";
+        retorno.innerHTML = "inválido! formato esperado: MT-xx.xxx-iftm";
         retorno.style.color = "Red";
     } 
 
@@ -85,12 +85,12 @@ function validaDisciplina3(elementoEntrada, elementoRetorno){
     let entrada = document.getElementById(elementoEntrada);
     let retorno = document.getElementById(elementoRetorno);
 
-    const padrao = /^M\s?T{2}-\d{2}\.\d{3}-I\s?F\s?T\s?M$i/;
+    const padrao = /^[Mm]\s?[Tt]\-\d{2}\.\d{3}\-[Ii]\s?[Ff]\s?[Tt]\s?[Mm]$/;
     if(padrao.test(entrada.value)){
         retorno.innerHTML = " válido!";
         retorno.style.color = "Green";
     }else{
-        retorno.innerHTML = "inválido! formato esperado: ";
+        retorno.innerHTML = "inválido! formato esperado: M T-xx.xxx-i f t m";
         retorno.style.color = "Red";
     } 
 

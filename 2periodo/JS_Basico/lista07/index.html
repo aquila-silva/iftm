@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/main.js"  type="module" defer ></script>
+    <script src="js/jMaskWiFi.js" defer></script>
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
@@ -11,75 +12,86 @@
     <form action="">
         <div>
             <label for="">Data de nascimento</label>
-            <input type="txt" id="Data" value="06/08/1956">
+            <input type="txt" id="data" value="06/08/1956">
             <input type="button" value="Validar" id="btnValidaData">
             <p id="txtRetorno1"></p>
         </div>
 
         <div>
             <label for="">CPF (jMakWiFi):</label>
-            <input type="text">
-            <input type="button" value="Validar">
+            <input onkeypress="inserirMascara('CPF','xxx.xxx.xxx-xx')" type="text" id="CPF" value="000.000.000-01">
+            <input type="button" value="Validar" id="btnValidaCPF">
+            <p id="txtRetorno2"></p>
         </div>
         
         <div>
             <label for="">Número de matrícula de um aluno:</label>
-            <input type="text">
-            <input type="button" value="Validar">
+            <input type="text" id="matricula" value="iftm-406/111-E7">
+            <input type="button" value="Validar" id="btnValidarMatricula" >
+            <p id="txtRetorno3"></p>
         </div>
 
         <div>
             <label for="">Código de uma disciplina do IFTM (jMakWiFi):</label>
-            <input type="text">
-            <input type="button" value="Validar">
+            <input onkeypress="inserirMascara('disciplina1', 'MT-xx.xxx-IFTM')" type="text" id="disciplina1" value="mt-12.456-ifTM">
+            <input type="button" value="Validar" id="btnValidaDisc1">
+            <p id="txtRetorno4"></p>
         </div>
 
         <div>
             <label for="">Código de uma disciplina do IFTM (versão 2) (jMakWiFi):</label>
-            <input type="text">
-            <input type="button" value="Validar">
+            <input onkeypress="inserirMascara('disciplina2', 'MT-xx.xxx-IFTM')"  type="text" id="disciplina2" value="MT-05.42-iftm">
+            <input type="button" value="Validar" id="btnValidaDisc2">
+            <p id="txtRetorno5"></p>
         </div>
 
         <div>
             <label for="">Código de uma disciplina do IFTM (versão 3):</label>
-            <input type="text">
+            <input onkeypress="inserirMascara('disciplina3', 'MT-xx.xxx-IFTM')"  type="text" id="disciplina3">
             <input type="button" value="Validar">
+            <p id="txtRetorno6"></p>
         </div>
 
         <div>
             <label for="">Nome de campus do IFTM:</label>
             <input type="text">
             <input type="button" value="Validar">
+            <p id="txtRetorno7"></p>
         </div>
 
         <div>
             <label for="">Telefone (jMakWiFi):</label>
             <input type="text">
             <input type="button" value="Validar">
+            <p id="txtRetorno8"></p>
         </div>
 
         <div>
             <label for="">Telefone (versão 2):</label>
             <input type="text">
             <input type="button" value="Validar">
+            <p id="txtRetorno9"></p>
         </div>
 
         <div>
             <label for="">Altura de uma pessoa:</label>
             <input type="text">
             <input type="button" value="Validar">
+            <p id="txtRetorno10"></p>
         </div>
 
         <div>
             <label for="">Faturamento anual de uma empresa:</label>
             <input type="text">
             <input type="button" value="Validar">
+            <p id="txtRetorno11"></p>
         </div>
 
         <div>
             <label for="">Cronômetro (jMakWiFi):</label>
             <input type="text">
             <input type="button" value="Validar">
+            <p id="txtRetorno12"></p>
         </div>
 
         

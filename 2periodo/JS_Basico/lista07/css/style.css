@@ -34,7 +34,7 @@ form input[type="button"]{
     background-color: rgb(97, 97, 139);
     color: white;
     font-size: large;
-    margin-left: 50px;
+    margin-left: 20px;
     width: 90px;
     cursor: pointer;
     transition: 0.2s;

@@ -1,5 +1,3 @@
-
-
 function validaData(elementoEntrada, elementoRetorno){
     
     let entrada = document.getElementById(elementoEntrada);
@@ -69,9 +67,9 @@ function validaDisciplina2(elementoEntrada, elementoRetorno){
     let entrada = document.getElementById(elementoEntrada);
     let retorno = document.getElementById(elementoRetorno);
 
-    const padrao = /^[M][T]\-\d{2}\.\d{3}\-[Ii][Ff][Tt][Mm]$/;
+    const padrao = /^(MT)\-\d{2}\.\d{3}\-([Ii][Ff][Tt][Mm])$/;
     if(padrao.test(entrada.value)){
-        retorno.innerHTML = " válido!";
+        retorno.innerHTML = "Código válido!";
         retorno.style.color = "Green";
     }else{
         retorno.innerHTML = "inválido! formato esperado: MT-xx.xxx-iftm";
@@ -87,7 +85,7 @@ function validaDisciplina3(elementoEntrada, elementoRetorno){
 
     const padrao = /^[Mm]\s?[Tt]\-\d{2}\.\d{3}\-[Ii]\s?[Ff]\s?[Tt]\s?[Mm]$/;
     if(padrao.test(entrada.value)){
-        retorno.innerHTML = " válido!";
+        retorno.innerHTML = "Código válido!";
         retorno.style.color = "Green";
     }else{
         retorno.innerHTML = "inválido! formato esperado: M T-xx.xxx-i f t m";
@@ -96,68 +94,71 @@ function validaDisciplina3(elementoEntrada, elementoRetorno){
 
 }
 
+
 function validaCampus(elementoEntrada, elementoRetorno){
     
     let entrada = document.getElementById(elementoEntrada);
     let retorno = document.getElementById(elementoRetorno);
 
-    const padrao = /^$/;
+    const padrao = /^IFTM campus Uberlândia( Centro)?$/;
     if(padrao.test(entrada.value)){
-        retorno.innerHTML = " válido!";
+        retorno.innerHTML = "Campus válido!";
         retorno.style.color = "Green";
     }else{
-        retorno.innerHTML = "inválido! formato esperado: ";
+        retorno.innerHTML = "Campus inválido! formato esperado: IFTM campus Uberlândia ou IFTM campus Uberlândia Centro";
         retorno.style.color = "Red";
     } 
 
 }
+
 
 function validaTelefone1(elementoEntrada, elementoRetorno){
     
     let entrada = document.getElementById(elementoEntrada);
     let retorno = document.getElementById(elementoRetorno);
 
-    const padrao = /^$/;
+    const padrao = /^\+\d{2}\(\d{2}\)\d{5}\-\d{4}$/;
     if(padrao.test(entrada.value)){
-        retorno.innerHTML = " válido!";
+        retorno.innerHTML = "Telefone válido!";
         retorno.style.color = "Green";
     }else{
-        retorno.innerHTML = "inválido! formato esperado: ";
+        retorno.innerHTML = "Telefone inválido! formato esperado: +yy(xx)xxxxx-xxxx";
         retorno.style.color = "Red";
     } 
 
 }
+
 
 function validaTelefone2(elementoEntrada, elementoRetorno){
     
     let entrada = document.getElementById(elementoEntrada);
     let retorno = document.getElementById(elementoRetorno);
 
-    const padrao = /^$/;
+    const padrao = /^\(\d{2,3}\)\s?\d{4,5}\-\d{4}$/;
     if(padrao.test(entrada.value)){
-        retorno.innerHTML = " válido!";
+        retorno.innerHTML = "Telefone válido!";
         retorno.style.color = "Green";
     }else{
-        retorno.innerHTML = "inválido! formato esperado: ";
+        retorno.innerHTML = "Telefone inválido! formato esperado: (xx) yyyyy-wwww";
         retorno.style.color = "Red";
     } 
 
 }
+
 
 function validaAltura(elementoEntrada, elementoRetorno){
     
     let entrada = document.getElementById(elementoEntrada);
     let retorno = document.getElementById(elementoRetorno);
 
-    const padrao = /^$/;
+    const padrao = /^(1[.,](3\d?|[4-9]\d?)|2[.,]([0-4]\d?|50?))$/;
     if(padrao.test(entrada.value)){
-        retorno.innerHTML = " válido!";
+        retorno.innerHTML = "Altura válida!";
         retorno.style.color = "Green";
     }else{
-        retorno.innerHTML = "inválido! formato esperado: ";
+        retorno.innerHTML = "Altura inválida! intervalo permitido: 1,3 a 2,5 (ou 1.3 a 2.5)";
         retorno.style.color = "Red";
     } 
-
 }
 
 function validaFaturamento(elementoEntrada, elementoRetorno){
@@ -165,32 +166,34 @@ function validaFaturamento(elementoEntrada, elementoRetorno){
     let entrada = document.getElementById(elementoEntrada);
     let retorno = document.getElementById(elementoRetorno);
 
-    const padrao = /^$/;
+    const padrao = /^R\$\d{1,3}(\.\d{3}){0,3},\d{1,2}$/;
     if(padrao.test(entrada.value)){
-        retorno.innerHTML = " válido!";
+        retorno.innerHTML = "Faturamento válido!";
         retorno.style.color = "Green";
     }else{
-        retorno.innerHTML = "inválido! formato esperado: ";
+        retorno.innerHTML = "Faturamento inválido! formato esperado: R$0,00 até R$999.999.999.999,99";
         retorno.style.color = "Red";
     } 
 
 }
+
 
 function validaCronometro(elementoEntrada, elementoRetorno){
     
     let entrada = document.getElementById(elementoEntrada);
     let retorno = document.getElementById(elementoRetorno);
 
-    const padrao = /^$/;
+    const padrao = /^([01]\d|2[0-3]):[0-5]\d:[0-5]\d:\d{2}$/;
     if(padrao.test(entrada.value)){
-        retorno.innerHTML = " válido!";
+        retorno.innerHTML = "Tempo válido!";
         retorno.style.color = "Green";
     }else{
-        retorno.innerHTML = "inválido! formato esperado: ";
+        retorno.innerHTML = "Tempo inválido! formato esperado: HH:MM:SS:CC (00:00:00:00 a 23:59:59:99)";
         retorno.style.color = "Red";
     } 
 
 }
+
 export default{
     validaData,
     validaCPF,
@@ -204,5 +207,4 @@ export default{
     validaAltura,
     validaFaturamento,
     validaCronometro
-
 }
